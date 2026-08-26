@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#030712">
+  <meta name="description" content="Mohamed Rizny - Aspiring AI Engineer and Management & IT undergraduate at the University of Kelaniya.">
+
+  <title>Mohamed Rizny — Aspiring AI Engineer</title>
+
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+  <!-- Interactive 3D Background Canvas -->
+  <canvas id="bg-canvas" class="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- Ambient Glow & Grid -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="ambient-glow glow-cyan" id="glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow glow-violet" id="glow-2" aria-hidden="true"></div>
+  <div class="cursor-glow" data-cursor-glow aria-hidden="true"></div>
+
+  <!-- Header Navigation -->
+  <header class="header" data-header>
+    <div class="header-container">
+
+      <a href="#home" class="logo">
+        <span class="logo-badge">&lt;MR /&gt;</span>
+        <div class="logo-text">
+          <span class="logo-title">Mohamed Rizny</span>
+          <span class="logo-subtitle">Aspiring AI Engineer</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" data-nav-menu>
+        <a href="#about" class="nav-link" data-nav-link>About</a>
+        <a href="#skills" class="nav-link" data-nav-link>Skills</a>
+        <a href="#projects" class="nav-link" data-nav-link>Projects</a>
+        <a href="#certificates" class="nav-link" data-nav-link>Certifications</a>
+        <a href="#contact" class="nav-link" data-nav-link>Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Theme Toggle Button -->
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle visual theme" title="Switch Theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="12" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+
+        <a href="#contact" class="btn btn-primary nav-cta">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4Z"/></svg>
+          <span>Get in Touch</span>
+        </a>
+
+        <button class="nav-toggle" type="button" data-nav-toggle aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+      <div class="hero-container">
+
+        <!-- Profile Avatar -->
+        <div class="avatar-container reveal">
+          <div class="avatar-halo"></div>
+          <div class="avatar-orbit"></div>
+          <div class="avatar-frame">
+            <div class="avatar-ring">
+              <img
+                src="./assets/images/my-avatar.png"
+                alt="Mohamed Rizny"
+                class="avatar-image"
+                onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80';">
+              <div class="avatar-scanner"></div>
+            </div>
+            <div class="status-badge">
+              <span class="status-dot"></span>
+              <span class="status-label">Aspiring AI Engineer</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Academic Tag -->
+        <div class="tag-wrapper reveal">
+          <span class="meta-tag">
+            <svg class="spark-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
+            Management &amp; IT Undergraduate &bull; University of Kelaniya
+          </span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="hero-heading reveal">
+          Engineering Intelligent Systems as an <br class="desktop-only">
+          <span class="highlight-gradient">Aspiring AI Engineer</span>
+        </h1>
+
+        <!-- Typewriter Subtitle -->
+        <p class="hero-subtitle reveal">
+          <span class="typewriter" data-typewriter='["Exploring Machine Learning & Deep Learning", "Architecting Scalable Software & Cloud AI", "Bridging Data Science & Intelligent Algorithms", "Building Impactful Systems for Tomorrow"]'></span>
+          <span class="cursor">|</span>
+        </p>
+
+        <!-- Description -->
+        <p class="hero-bio reveal">
+          Hi, I'm Mohamed Rizny. I combine foundational AI principles, software engineering, and analytical IT training to build intelligent algorithms and scalable applications.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="hero-buttons reveal">
+          <a href="#certificates" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <span>View Certifications</span>
+          </a>
+          <a href="#projects" class="btn btn-secondary">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <span>Explore Projects</span>
+          </a>
+          <a href="mailto:mohamedrizee2005@gmail.com" class="btn btn-secondary">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            <span>Email Me</span>
+          </a>
+        </div>
+
+        <!-- Quick Links / Badges -->
+        <div class="hero-badges reveal">
+          <a class="badge-link" href="https://github.com/mohamedrizee2005-ship-it" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.19-1.11-1.5-1.11-1.5-.9-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.58 2.34 1.12 2.91.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05a9.28 9.28 0 0 1 5 0c1.9-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.8-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg>
+            <span>GitHub</span>
+          </a>
+          <a class="badge-link" href="https://www.linkedin.com/in/mohamed-rizny-818296379" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M6.94 5a2 2 0 1 1-4-.02 2 2 0 0 1 4 .02ZM3.25 8.75h3.5V21h-3.5V8.75Zm6.5 0h3.35v1.68h.05c.47-.88 1.6-1.8 3.3-1.8 3.53 0 4.18 2.32 4.18 5.35V21h-3.5v-5.44c0-1.3-.02-2.97-1.81-2.97-1.82 0-2.1 1.42-2.1 2.87V21h-3.47V8.75Z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+          <span class="badge-link badge-static">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Sri Lanka</span>
+          </span>
+          <span class="badge-link badge-live">
+            <span class="pulse-indicator"></span>
+            <span>Open to Opportunities</span>
+          </span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="section-subtitle">Background</span>
+          <h2 class="section-title">About Me</h2>
+        </div>
+
+        <div class="about-layout">
+
+          <div class="glass-card about-intro reveal">
+            <div class="chip">Overview</div>
+            <p>
+              I am an undergraduate student pursuing a <strong>B.Sc. in Management &amp; Information Technology</strong> at the <strong>University of Kelaniya, Sri Lanka</strong>.
+            </p>
+            <p>
+              I am passionate about how artificial intelligence and machine learning can solve real-world problems and automate complex tasks. My core focus lies in <strong>AI engineering principles</strong>, <strong>machine learning pipelines</strong>, and <strong>full-stack software development</strong>.
+            </p>
+            <p>
+              My goal is to design robust algorithms and scalable cloud-connected systems that turn theoretical concepts into practical software applications.
+            </p>
+
+            <div class="stats-grid">
+              <div class="stat-item">
+                <span class="stat-value">AI &amp; IT</span>
+                <span class="stat-desc">Primary Focus</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value">3+</span>
+                <span class="stat-desc">Certifications</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value">2026</span>
+                <span class="stat-desc">Active Projects</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-domains">
+
+            <div class="card domain-item reveal">
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10H12V2z"/><path d="M12 12L2.5 7.5"/><path d="m12 12 4.5 7.5"/></svg>
+              </div>
+              <div>
+                <h3>Artificial Intelligence &amp; ML</h3>
+                <p>Azure AI services, neural network concepts, ML workflows, predictive modeling, and intelligent data systems.</p>
+              </div>
+            </div>
+
+            <div class="card domain-item reveal">
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </div>
+              <div>
+                <h3>Software Development</h3>
+                <p>Object-oriented programming and clean software design using Python, Java, and C++.</p>
+              </div>
+            </div>
+
+            <div class="card domain-item reveal">
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/></svg>
+              </div>
+              <div>
+                <h3>Modern Web Interfaces</h3>
+                <p>Developing responsive, fast web interfaces with modern JavaScript (ES6+), HTML5, and CSS3.</p>
+              </div>
+            </div>
+
+            <div class="card domain-item reveal">
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+              </div>
+              <div>
+                <h3>Databases &amp; Networking</h3>
+                <p>Relational database modeling with SQL/MySQL, network architecture design, and Cisco Packet Tracer configurations.</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="section-subtitle">Competencies</span>
+          <h2 class="section-title">Technical Skills</h2>
+        </div>
+
+        <div class="skills-grid">
+
+          <!-- Skill 1: AI & ML -->
+          <div class="card skill-card skill-card-featured reveal">
+            <div class="skill-header">
+              <div class="skill-emoji">🤖</div>
+              <div>
+                <h3>AI &amp; Data Science</h3>
+                <span class="skill-category">Specialization</span>
+              </div>
+            </div>
+            <div class="pill-group">
+              <span class="pill pill-accent">Python 3</span>
+              <span class="pill pill-accent">Azure AI Services</span>
+              <span class="pill">Machine Learning</span>
+              <span class="pill">Neural Networks</span>
+              <span class="pill">Data Modeling</span>
+              <span class="pill">Jupyter Notebooks</span>
+            </div>
+            <div class="skill-footer">
+              <span class="indicator-dot"></span>
+              <span>Active focus area</span>
+            </div>
+          </div>
+
+          <!-- Skill 2: Software Development -->
+          <div class="card skill-card reveal">
+            <div class="skill-header">
+              <div class="skill-emoji">💻</div>
+              <div>
+                <h3>Software &amp; Web</h3>
+                <span class="skill-category">Core Development</span>
+              </div>
+            </div>
+            <div class="pill-group">
+              <span class="pill">Java (OOP)</span>
+              <span class="pill">C++</span>
+              <span class="pill">JavaScript (ES6+)</span>
+              <span class="pill">HTML5 &amp; CSS3</span>
+              <span class="pill">REST APIs</span>
+              <span class="pill">Responsive Design</span>
+            </div>
+            <div class="skill-footer">
+              <span class="indicator-dot"></span>
+              <span>OOP &amp; modular architecture</span>
+            </div>
+          </div>
+
+          <!-- Skill 3: Databases & Tools -->
+          <div class="card skill-card reveal">
+            <div class="skill-header">
+              <div class="skill-emoji">🗄️</div>
+              <div>
+                <h3>Databases &amp; Tooling</h3>
+                <span class="skill-category">Data &amp; DevOps</span>
+              </div>
+            </div>
+            <div class="pill-group">
+              <span class="pill">SQL Queries</span>
+              <span class="pill">MySQL RDBMS</span>
+              <span class="pill">Schema Design</span>
+              <span class="pill">Git &amp; GitHub</span>
+              <span class="pill">VS Code</span>
+              <span class="pill">Linux / Shell</span>
+            </div>
+            <div class="skill-footer">
+              <span class="indicator-dot"></span>
+              <span>Version control &amp; database design</span>
+            </div>
+          </div>
+
+          <!-- Skill 4: Systems & Hardware -->
+          <div class="card skill-card reveal">
+            <div class="skill-header">
+              <div class="skill-emoji">📡</div>
+              <div>
+                <h3>Systems &amp; Hardware</h3>
+                <span class="skill-category">Infrastructure</span>
+              </div>
+            </div>
+            <div class="pill-group">
+              <span class="pill">Computer Networks</span>
+              <span class="pill">Cisco Packet Tracer</span>
+              <span class="pill">ESP32 Microcontrollers</span>
+              <span class="pill">Sensor Integration</span>
+              <span class="pill">IoT Architecture</span>
+            </div>
+            <div class="skill-footer">
+              <span class="indicator-dot"></span>
+              <span>Hardware-software integration</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="section-subtitle">Experience</span>
+          <h2 class="section-title">Featured Projects</h2>
+        </div>
+
+        <div class="timeline-container">
+
+          <!-- Project 1 -->
+          <div class="timeline-entry reveal">
+            <div class="timeline-marker">
+              <div class="marker-dot"></div>
+            </div>
+            <div class="card timeline-content">
+              <div class="timeline-header">
+                <div>
+                  <span class="timeline-tag">IoT &amp; Cloud Project</span>
+                  <h3 class="timeline-name">Secureon — Silent Personal Safety System</h3>
+                </div>
+                <span class="timeline-date">2026 — Present</span>
+              </div>
+              <p class="timeline-text">
+                Developing <strong>Secureon</strong>, a discreet hands-free personal safety emergency device designed to trigger rapid SOS alerts without needing phone interaction or screen unlock.
+              </p>
+              <ul class="feature-list">
+                <li><span>⚡</span> Instant verified SOS beacon triggers without unlocking a mobile device.</li>
+                <li><span>📡</span> Real-time GPS location telemetry transmission and emergency routing.</li>
+                <li><span>🔒</span> Engineered for discreet operation during urgent personal safety situations.</li>
+              </ul>
+              <div class="tag-row">
+                <span class="tech-tag">ESP32</span>
+                <span class="tech-tag">IoT</span>
+                <span class="tech-tag">GPS Telemetry</span>
+                <span class="tech-tag">Safety Systems</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="timeline-entry reveal">
+            <div class="timeline-marker">
+              <div class="marker-dot"></div>
+            </div>
+            <div class="card timeline-content">
+              <div class="timeline-header">
+                <div>
+                  <span class="timeline-tag">Academic Systems</span>
+                  <h3 class="timeline-name">Database Schemas &amp; Enterprise Network Modeling</h3>
+                </div>
+                <span class="timeline-date">2025 — Present</span>
+              </div>
+              <p class="timeline-text">
+                Designed normalized relational databases, optimized SQL queries, and entity-relationship models for enterprise applications. Configured multi-subnet enterprise topologies in Cisco Packet Tracer with VLANs, routing, and access control.
+              </p>
+              <div class="tag-row">
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">SQL</span>
+                <span class="tech-tag">Cisco Packet Tracer</span>
+                <span class="tech-tag">Subnetting</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="timeline-entry reveal">
+            <div class="timeline-marker">
+              <div class="marker-dot"></div>
+            </div>
+            <div class="card timeline-content">
+              <div class="timeline-header">
+                <div>
+                  <span class="timeline-tag">Software Engineering</span>
+                  <h3 class="timeline-name">Object-Oriented Applications &amp; Algorithms</h3>
+                </div>
+                <span class="timeline-date">2025 — Present</span>
+              </div>
+              <p class="timeline-text">
+                Implemented core object-oriented software patterns, abstraction, inheritance, polymorphism, and standard data structure algorithms across Java, C++, and Python projects.
+              </p>
+              <div class="tag-row">
+                <span class="tech-tag">Java</span>
+                <span class="tech-tag">C++</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">OOP</span>
+                <span class="tech-tag">Algorithms</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certificates" class="section">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="section-subtitle">Credentials</span>
+          <h2 class="section-title">Certifications</h2>
+        </div>
+
+        <div class="cert-grid">
+
+          <!-- Certificate 1 -->
+          <div class="card cert-card reveal" data-tilt>
+            <a href="https://learn.microsoft.com/api/credentials/share/en-us/MOHAMEDRIZNY-5342/ACEE69779CD0C88F"
+               target="_blank" rel="noopener noreferrer" class="cert-link" aria-label="View Azure AI Certificate">
+
+              <div class="cert-image-box">
+                <span class="cert-pill">Verified</span>
+                <div class="spotlight" aria-hidden="true"></div>
+                <img
+                  src="./assets/images/microsoft-ai.jpeg"
+                  alt="Microsoft Certified: Azure AI Fundamentals"
+                  loading="lazy"
+                  onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80';">
+                <span class="zoom-button" aria-label="Enlarge certificate image">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                </span>
+              </div>
+
+              <div class="cert-details">
+                <span class="cert-issuer">Microsoft Certified</span>
+                <h3 class="cert-title">Azure AI Fundamentals</h3>
+                <p class="cert-date">Microsoft &bull; Issued Jun 2026</p>
+                <div class="cert-action">
+                  <span>Verify Credential</span>
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </div>
+              </div>
+
+            </a>
+          </div>
+
+          <!-- Certificate 2 -->
+          <div class="card cert-card reveal" data-tilt>
+            <a href="https://www.credly.com/badges/758cab42-4836-46f9-af2b-caef13e926d9"
+               target="_blank" rel="noopener noreferrer" class="cert-link" aria-label="View AI Skills Fest Certificate">
+
+              <div class="cert-image-box">
+                <span class="cert-pill">Verified</span>
+                <div class="spotlight" aria-hidden="true"></div>
+                <img
+                  src="./assets/images/ai-skills-fest.png"
+                  alt="Microsoft AI Skills Fest 2026"
+                  loading="lazy"
+                  onerror="this.src='https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=600&q=80';">
+                <span class="zoom-button" aria-label="Enlarge certificate image">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                </span>
+              </div>
+
+              <div class="cert-details">
+                <span class="cert-issuer">Microsoft &bull; Credly</span>
+                <h3 class="cert-title">AI Skills Fest 2026</h3>
+                <p class="cert-date">Microsoft &bull; Issued Jun 2026</p>
+                <div class="cert-action">
+                  <span>Verify Credential</span>
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </div>
+              </div>
+
+            </a>
+          </div>
+
+          <!-- Certificate 3 -->
+          <div class="card cert-card reveal" data-tilt>
+            <a href="https://www.freecodecamp.org/certification/mohamedrizny/python-v9"
+               target="_blank" rel="noopener noreferrer" class="cert-link" aria-label="View Python Certificate">
+
+              <div class="cert-image-box">
+                <span class="cert-pill">Verified</span>
+                <div class="spotlight" aria-hidden="true"></div>
+                <img
+                  src="./assets/images/python.jpeg"
+                  alt="freeCodeCamp Python Developer Certification"
+                  loading="lazy"
+                  onerror="this.src='https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80';">
+                <span class="zoom-button" aria-label="Enlarge certificate image">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                </span>
+              </div>
+
+              <div class="cert-details">
+                <span class="cert-issuer">freeCodeCamp</span>
+                <h3 class="cert-title">Python Developer Certification</h3>
+                <p class="cert-date">freeCodeCamp &bull; Issued Jun 2026</p>
+                <div class="cert-action">
+                  <span>Verify Credential</span>
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </div>
+              </div>
+
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="section-subtitle">Get in Touch</span>
+          <h2 class="section-title">Contact</h2>
+        </div>
+
+        <div class="contact-layout">
+
+          <div class="contact-sidebar reveal">
+            <div class="glass-card contact-message-card">
+              <h3>Let's Connect</h3>
+              <p>
+                I'm open to discussing AI engineering projects, software development internships, or potential collaborations.
+              </p>
+            </div>
+
+            <div class="contact-links">
+
+              <div class="card contact-item">
+                <div class="contact-icon">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+                </div>
+                <div>
+                  <span class="contact-type">Email</span>
+                  <a href="mailto:mohamedrizee2005@gmail.com" class="contact-text">mohamedrizee2005@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="card contact-item">
+                <div class="contact-icon">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92Z"/></svg>
+                </div>
+                <div>
+                  <span class="contact-type">Phone</span>
+                  <a href="tel:+94756166103" class="contact-text">+94 75 616 6103</a>
+                </div>
+              </div>
+
+              <div class="card contact-item">
+                <div class="contact-icon">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div>
+                  <span class="contact-type">Location</span>
+                  <span class="contact-text">Western Province, Sri Lanka</span>
+                </div>
+              </div>
+
+              <div class="card contact-item">
+                <div class="contact-icon">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.19-1.11-1.5-1.11-1.5-.9-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.58 2.34 1.12 2.91.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05a9.28 9.28 0 0 1 5 0c1.9-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.8-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg>
+                </div>
+                <div>
+                  <span class="contact-type">GitHub</span>
+                  <a href="https://github.com/mohamedrizee2005-ship-it" target="_blank" rel="noopener noreferrer" class="contact-text">github.com/mohamedrizee2005-ship-it</a>
+                </div>
+              </div>
+
+              <div class="card contact-item">
+                <div class="contact-icon">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M6.94 5a2 2 0 1 1-4-.02 2 2 0 0 1 4 .02ZM3.25 8.75h3.5V21h-3.5V8.75Zm6.5 0h3.35v1.68h.05c.47-.88 1.6-1.8 3.3-1.8 3.53 0 4.18 2.32 4.18 5.35V21h-3.5v-5.44c0-1.3-.02-2.97-1.81-2.97-1.82 0-2.1 1.42-2.1 2.87V21h-3.47V8.75Z"/></svg>
+                </div>
+                <div>
+                  <span class="contact-type">LinkedIn</span>
+                  <a href="https://www.linkedin.com/in/mohamed-rizny-818296379" target="_blank" rel="noopener noreferrer" class="contact-text">linkedin.com/in/mohamed-rizny-818296379</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="glass-card contact-form-card reveal">
+            <div class="form-title-box">
+              <h3>Send a Message</h3>
+              <p>Fill out the form below to send an email directly to my inbox.</p>
+            </div>
+
+            <form class="contact-form" id="contact-form">
+              <div class="form-grid">
+                <div class="input-group">
+                  <label for="fullname" class="input-label">Your Name</label>
+                  <input type="text" name="fullname" id="fullname" class="form-control" placeholder="Alex Morgan" required>
+                </div>
+                <div class="input-group">
+                  <label for="email" class="input-label">Your Email</label>
+                  <input type="email" name="email" id="email" class="form-control" placeholder="alex@example.com" required>
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label for="subject" class="input-label">Subject</label>
+                <input type="text" name="subject" id="subject" class="form-control" placeholder="Project Inquiry / Opportunity">
+              </div>
+
+              <div class="input-group">
+                <label for="message" class="input-label">Message</label>
+                <textarea name="message" id="message" class="form-control textarea" placeholder="Write your message here..." required></textarea>
+              </div>
+
+              <button class="btn btn-primary form-button" type="submit">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                <span>Send Message</span>
+              </button>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <span class="footer-logo">&lt;MR /&gt;</span>
+        <p>&copy; <span data-year>2026</span> Mohamed Rizny. All rights reserved.</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/mohamedrizee2005-ship-it" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/mohamed-rizny-818296379" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:mohamedrizee2005@gmail.com">Email</a>
+        <a href="#home">Back to Top &uarr;</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Certificate Image Modal (Lightbox) -->
+  <div class="modal-backdrop" data-lightbox hidden>
+    <div class="modal-content">
+      <img src="" alt="" data-lightbox-img>
+      <button type="button" class="modal-close" data-lightbox-close aria-label="Close image preview">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <script src="./assets/js/script.js"></script>
+</body>
+</html>
