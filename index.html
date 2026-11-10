@@ -5,9 +5,45 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#030712">
-  <meta name="description" content="Mohamed Rizny - Aspiring AI Engineer and Management & IT undergraduate at the University of Kelaniya.">
+  <meta name="description" content="Portfolio of Mohamed Rizny, a University of Kelaniya Management & IT undergraduate learning AI and software development. Explore projects, technical skills, and certifications.">
+  <meta name="author" content="Mohamed Rizny">
+  <link rel="canonical" href="https://riznysm.me/">
 
-  <title>Mohamed Rizny — Aspiring AI Engineer</title>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mohamed Rizny | Aspiring AI Engineer">
+  <meta property="og:description" content="Management & IT undergraduate at the University of Kelaniya, learning AI and software development through practical projects.">
+  <meta property="og:url" content="https://riznysm.me/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Mohamed Rizny | Aspiring AI Engineer">
+  <meta name="twitter:description" content="Explore Mohamed Rizny's projects, technical skills, and certifications.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mohamed Rizny",
+    "url": "https://riznysm.me/",
+    "description": "Management & IT undergraduate at the University of Kelaniya learning AI and software development.",
+    "affiliation": {
+      "@type": "EducationalOrganization",
+      "name": "University of Kelaniya"
+    },
+    "sameAs": [
+      "https://github.com/mohamedrizee2005-ship-it",
+      "https://www.linkedin.com/in/mohamed-rizny-818296379"
+    ],
+    "knowsAbout": [
+      "Artificial Intelligence",
+      "Software Development",
+      "Java",
+      "Python",
+      "Kotlin",
+      "MySQL"
+    ]
+  }
+  </script>
+
+  <title>Mohamed Rizny | Management &amp; IT Undergraduate &amp; Aspiring AI Engineer</title>
 
   <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
 
@@ -41,7 +77,7 @@
         </div>
       </a>
 
-      <nav class="nav-menu" data-nav-menu>
+      <nav class="nav-menu" data-nav-menu aria-label="Main navigation">
         <a href="#about" class="nav-link" data-nav-link>About</a>
         <a href="#skills" class="nav-link" data-nav-link>Skills</a>
         <a href="#projects" class="nav-link" data-nav-link>Projects</a>
@@ -83,8 +119,10 @@
             <div class="avatar-ring">
               <img
                 src="./assets/images/my-avatar.png"
-                alt="Mohamed Rizny"
+                alt="Portrait of Mohamed Rizny"
                 class="avatar-image"
+                fetchpriority="high"
+                decoding="async"
                 onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80';">
               <div class="avatar-scanner"></div>
             </div>
@@ -105,8 +143,8 @@
 
         <!-- Headline -->
         <h1 class="hero-heading reveal">
-          Engineering Intelligent Systems as an <br class="desktop-only">
-          <span class="highlight-gradient">Aspiring AI Engineer</span>
+          Learning and Building Towards <br class="desktop-only">
+          <span class="highlight-gradient">AI Engineering</span>
         </h1>
 
         <!-- Typewriter Subtitle -->
@@ -117,7 +155,7 @@
 
         <!-- Description -->
         <p class="hero-bio reveal">
-          Hi, I'm Mohamed Rizny. I combine foundational AI principles, software engineering, and analytical IT training to build intelligent algorithms and scalable applications.
+          I'm Mohamed Rizny, a Management &amp; IT undergraduate at the University of Kelaniya. I'm learning AI and software development by building practical projects and strengthening my programming skills.
         </p>
 
         <!-- CTA Buttons -->
@@ -216,7 +254,7 @@
               </div>
               <div>
                 <h3>Software Development</h3>
-                <p>Practising programming and object-oriented concepts with Java and C++ through coursework and projects.</p>
+                <p>Practising programming and object-oriented concepts with Python, Java, and C++ through coursework and projects.</p>
               </div>
             </div>
 
@@ -264,7 +302,7 @@
           </div>
           <div class="card skill-card reveal">
             <div class="skill-header"><div class="skill-emoji">💻</div><div><h3>Software &amp; Web</h3><span class="skill-category">Programming</span></div></div>
-            <div class="pill-group"><span class="pill">Java</span><span class="pill">C++</span><span class="pill">Kotlin</span><span class="pill">Object-Oriented Programming</span><span class="pill">HTML5</span><span class="pill">CSS3</span><span class="pill">JavaScript</span></div>
+            <div class="pill-group"><span class="pill">Python</span><span class="pill">Java</span><span class="pill">C++</span><span class="pill">Kotlin</span><span class="pill">Object-Oriented Programming</span><span class="pill">HTML5</span><span class="pill">CSS3</span><span class="pill">JavaScript</span></div>
             <div class="skill-footer"><span class="indicator-dot"></span><span>Programming and application development</span></div>
           </div>
           <div class="card skill-card reveal">
@@ -503,18 +541,18 @@
           <div class="glass-card contact-form-card reveal">
             <div class="form-title-box">
               <h3>Send a Message</h3>
-              <p>Fill out the form below to send an email directly to my inbox.</p>
+              <p>Fill out the form below to open an email with your message ready to send.</p>
             </div>
 
             <form class="contact-form" id="contact-form">
               <div class="form-grid">
                 <div class="input-group">
                   <label for="fullname" class="input-label">Your Name</label>
-                  <input type="text" name="fullname" id="fullname" class="form-control" placeholder="Alex Morgan" required>
+                  <input type="text" name="fullname" id="fullname" class="form-control" placeholder="Alex Morgan" autocomplete="name" required>
                 </div>
                 <div class="input-group">
                   <label for="email" class="input-label">Your Email</label>
-                  <input type="email" name="email" id="email" class="form-control" placeholder="alex@example.com" required>
+                  <input type="email" name="email" id="email" class="form-control" placeholder="alex@example.com" autocomplete="email" required>
                 </div>
               </div>
 
