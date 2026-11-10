@@ -63,7 +63,8 @@ document.addEventListener("DOMContentLoaded", () => {
       canvas.style.width = width + "px";
       canvas.style.height = height + "px";
 
-      ctx.scale(dpr, dpr);
+      // Reset the transform on every resize to avoid multiplying the device-pixel scale.
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
       cols = Math.ceil(width / spacing) + 14;
       rows = Math.ceil(height / spacing) + 16;
@@ -306,6 +307,12 @@ document.addEventListener("DOMContentLoaded", () => {
       phrases = JSON.parse(target.getAttribute("data-typewriter"));
     } catch (err) {
       phrases = ["Exploring Machine Learning & Deep Learning", "Architecting Scalable Software & Cloud AI"];
+    }
+
+    // Respect reduced-motion preferences while keeping the subtitle readable.
+    if (prefersReducedMotion) {
+      target.textContent = phrases[0] || "Learning AI and software development";
+      return;
     }
 
     let phraseIndex = 0;
