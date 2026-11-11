@@ -45,7 +45,7 @@
 
   <title>Mohamed Rizny | Management &amp; IT Undergraduate &amp; Aspiring AI Engineer</title>
 
-  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+  <link rel="icon" href="./assets/images/icon-app.svg" type="image/svg+xml">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,6 +55,7 @@
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
   <!-- Interactive 3D Background Canvas -->
   <canvas id="bg-canvas" class="bg-canvas" aria-hidden="true"></canvas>
@@ -337,9 +338,21 @@
               <p class="timeline-text">A native Android fitness app I built to make healthy weight gain and home strength training easier to track. Version 3 includes a four-day no-equipment workout plan tailored to push-up ability, Sri Lankan food and protein logging, optional AI-assisted food-photo nutrition estimates, and weight and workout progress tracking. Food-photo results are estimates that users can review before saving.</p>
               <div class="tag-row"><span class="tech-tag">Kotlin</span><span class="tech-tag">Jetpack Compose</span><span class="tech-tag">Room Database</span><span class="tech-tag">Gemini API</span><span class="tech-tag">GitHub Actions</span><span class="tech-tag">Android</span></div>
               <div class="tag-row">
-                <a class="tech-tag" href="https://github.com/mohamedrizee2005-ship-it/GainTrack/tree/gaintrack-v3-focused-muscle-coach" target="_blank" rel="noopener noreferrer" aria-label="View GainTrack version 3 source code on GitHub">View v3 Source Code ↗</a>
-                <a class="tech-tag" href="https://github.com/mohamedrizee2005-ship-it/GainTrack/actions/runs/42960149286" target="_blank" rel="noopener noreferrer" aria-label="View successful GainTrack version 3 Android debug APK build">View Android APK Build ↗</a>
+                <a class="tech-tag" href="https://github.com/mohamedrizee2005-ship-it/GainTrack/tree/main" target="_blank" rel="noopener noreferrer" aria-label="View merged GainTrack version 3 source code on GitHub">View v3 Source Code ↗</a>
+                <a class="tech-tag" href="https://github.com/mohamedrizee2005-ship-it/GainTrack/releases/tag/v3.0.0" target="_blank" rel="noopener noreferrer" aria-label="View GainTrack version 3 Android release and APK">Android v3 Release ↗</a>
               </div>
+
+              <!-- GainTrack engineering case study -->
+              <details class="project-case-study">
+                <summary>How I built GainTrack v3 <span aria-hidden="true">+</span></summary>
+                <div class="case-study-body">
+                  <p><strong>The problem:</strong> Tracking weight gain, protein intake, and strength training can be confusing when meals are Sri Lankan and gym equipment is not available.</p>
+                  <p><strong>My approach:</strong> I built an Android app with a four-day bodyweight plan, adjustable push-up difficulty, daily nutrition logs, weekly progress tracking, and a food-photo analysis flow that asks users to review estimates.</p>
+                  <p><strong>How it works:</strong> Kotlin and Jetpack Compose power the interface; Room stores local records. The optional Gemini-powered camera suggests foods and approximate nutrition, while GitHub Actions builds the Android APK.</p>
+                  <p><strong>What I learned:</strong> I practiced working with Android UI states, local data, CI builds, exercise progression, and the limitations of AI-generated calorie estimates. I also fixed system-bar spacing and build issues through version 3.</p>
+                  <p class="case-study-note">Version 3 is a working Android MVP. Food-photo estimates are approximate and require user review; the APK is a debug build rather than a Play Store release.</p>
+                </div>
+              </details>
             </div>
           </div>
 
@@ -609,6 +622,6 @@
     </div>
   </div>
 
-  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/script.js" defer></script>
 </body>
 </html>
