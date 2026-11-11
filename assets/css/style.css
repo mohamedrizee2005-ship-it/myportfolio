@@ -1852,3 +1852,69 @@ input, textarea {
     display: none;
   }
 }
+
+/* GainTrack project notes and screenshot gallery */
+.project-case-study {
+  margin-top: 1.1rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  background: var(--surface-glass-high);
+}
+.project-case-study summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.project-case-study summary::marker { color: var(--accent-blue); }
+.project-case-study[open] summary span { transform: rotate(45deg); }
+.project-case-study summary span { color: var(--accent-cyan); transition: transform 160ms ease; }
+.case-study-body { padding-top: 0.9rem; }
+.case-study-body p { color: var(--text-muted); font-size: 0.94rem; line-height: 1.75; margin: 0 0 0.75rem; }
+.case-study-body p strong { color: var(--text-main); }
+.case-study-body .case-study-note { font-size: 0.84rem; }
+.skip-link {
+  position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+  padding: 0.65rem 1rem;
+  background: var(--accent-blue);
+  color: #030712;
+  border-radius: 8px;
+  z-index: 9999;
+  transform: translateY(-160%);
+  font-weight: 700;
+}
+.skip-link:focus { transform: translateY(0); }
+.gaintrack-gallery {
+  margin-block: 1.1rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+.gaintrack-shot { display: block; color: var(--text-muted); font-size: 0.8rem; text-decoration: none; }
+.gaintrack-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 29 / 52;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+.gaintrack-shot:hover img, .gaintrack-shot:focus-visible img { outline: 2px solid var(--accent-cyan); outline-offset: 2px; }
+.gaintrack-shot figcaption { padding-top: 0.35rem; text-align: center; }
+@media (max-width: 800px) {
+  .gaintrack-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.6rem; }
+}
+@media (max-width: 640px) {
+  .bg-canvas { display: none; } /* Avoid continuous GPU/CPU canvas work on small screens */
+  .gaintrack-gallery { margin-block: 0.9rem; }
+  .gaintrack-shot figcaption { font-size: 0.74rem; }
+}
