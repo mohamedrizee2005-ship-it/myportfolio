@@ -1892,10 +1892,11 @@ input, textarea {
 }
 .skip-link:focus { transform: translateY(0); }
 .gaintrack-gallery {
-  margin-block: 1.1rem;
+  margin: 1rem 0 0.7rem;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.75rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+  max-width: 780px;
 }
 .gaintrack-shot { display: block; min-width: 0; margin: 0; color: var(--text-muted); font-size: 0.8rem; text-decoration: none; }
 .gaintrack-shot a { display: block; text-decoration: none; }
@@ -1903,8 +1904,7 @@ input, textarea {
 .gaintrack-shot img {
   display: block;
   width: 100%;
-  height: auto;
-  aspect-ratio: 29 / 52;
+  height: clamp(250px, 30vw, 360px);
   object-fit: cover;
   object-position: top;
   border-radius: 12px;
@@ -1913,10 +1913,23 @@ input, textarea {
 .gaintrack-shot:hover img, .gaintrack-shot:focus-visible img { outline: 2px solid var(--accent-cyan); outline-offset: 2px; }
 .gaintrack-shot figcaption { padding-top: 0.35rem; text-align: center; }
 @media (max-width: 800px) {
-  .gaintrack-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.6rem; }
+  .gaintrack-gallery { gap: 0.6rem; }
 }
 @media (max-width: 640px) {
   .bg-canvas { display: none; } /* Avoid continuous GPU/CPU canvas work on small screens */
-  .gaintrack-gallery { margin-block: 0.9rem; }
-  .gaintrack-shot figcaption { font-size: 0.74rem; }
+  .gaintrack-gallery {
+    margin-block: 0.8rem;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(220px, 77%);
+    grid-template-columns: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 2px;
+    overscroll-behavior-inline: contain;
+    padding-bottom: 0.65rem;
+    -webkit-overflow-scrolling: touch;
+  }
+  .gaintrack-shot { scroll-snap-align: start; }
+  .gaintrack-shot img { height: 350px; }
+  .gaintrack-shot figcaption { font-size: 0.77rem; }
 }
