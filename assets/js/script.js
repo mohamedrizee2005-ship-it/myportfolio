@@ -30,10 +30,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // 2. 3D Neural Manifold Background Canvas (Refined, High-Transparency & Elegant)
   function initBackgroundCanvas() {
     const canvas = document.getElementById("bg-canvas");
-    if (!canvas || prefersReducedMotion) return;
+    if (!canvas || prefersReducedMotion || (isTouchDevice && window.innerWidth <= 960)) return;
 
     const ctx = canvas.getContext("2d");
     let width, height, dpr;
+    let animationFrameId = null;
+    let lastRenderedAt = 0;
 
     const mouse = {
       x: -1000,
@@ -54,7 +56,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const pulses = [];
 
     function resize() {
-      dpr = window.devicePixelRatio || 1;
+      // Limit high-density pixel work; the canvas is decorative, not essential content.
+      dpr = Math.min(window.devicePixelRatio || 1, 1.5);
       width = window.innerWidth;
       height = window.innerHeight;
 
@@ -138,7 +141,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     let time = 0;
-    function render() {
+    function render(timestamp = 0) {
+      if (document.hidden) {
+        animationFrameId = null;
+        return;
+      }
+      // Keep decorative animation around 30fps instead of continuously chasing 60fps.
+      if (timestamp && timestamp - lastRenderedAt < 32) {
+        animationFrameId = requestAnimationFrame(render);
+        return;
+      }
+      lastRenderedAt = timestamp;
       const isDark = document.documentElement.getAttribute("data-theme") !== "light";
 
       ctx.clearRect(0, 0, width, height);
@@ -288,13 +301,18 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
 
-      time += 16;
-      requestAnimationFrame(render);
+      time += 32;
+      animationFrameId = requestAnimationFrame(render);
     }
 
-    window.addEventListener("resize", resize);
+    window.addEventListener("resize", resize, { passive: true });
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden && animationFrameId === null) {
+        animationFrameId = requestAnimationFrame(render);
+      }
+    });
     resize();
-    render();
+    animationFrameId = requestAnimationFrame(render);
   }
 
   // 3. Typewriter Animation
