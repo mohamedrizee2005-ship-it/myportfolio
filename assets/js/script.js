@@ -33,6 +33,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!canvas || prefersReducedMotion) return;
 
     const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+    // Keep a beautiful static background on touch devices without continuous GPU/CPU work.
+    const staticMobile = isTouchDevice || window.matchMedia("(max-width: 640px)").matches;
     let width, height, dpr;
 
     const mouse = {
@@ -54,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const pulses = [];
 
     function resize() {
-      dpr = window.devicePixelRatio || 1;
+      dpr = Math.min(window.devicePixelRatio || 1, 1.75);
       width = window.innerWidth;
       height = window.innerHeight;
 
@@ -288,13 +291,46 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
 
-      time += 16;
-      requestAnimationFrame(render);
+      time += 33;
     }
 
-    window.addEventListener("resize", resize);
+    // Cap drawing to roughly 30 FPS on larger screens and stop work in background tabs.
+    const minFrameMs = 1000 / 30;
+    let frameHandle = 0;
+    let lastFrameMs = 0;
+
+    function animationFrame(now) {
+      frameHandle = 0;
+      if (document.hidden) return;
+      if (now - lastFrameMs >= minFrameMs) {
+        render();
+        lastFrameMs = now;
+      }
+      frameHandle = requestAnimationFrame(animationFrame);
+    }
+
+    function startAnimation() {
+      if (!staticMobile && !document.hidden && !frameHandle) {
+        frameHandle = requestAnimationFrame(animationFrame);
+      }
+    }
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden && frameHandle) {
+        cancelAnimationFrame(frameHandle);
+        frameHandle = 0;
+      } else if (!document.hidden) {
+        startAnimation();
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      resize();
+      if (staticMobile) render();
+    });
     resize();
-    render();
+    if (staticMobile) render();
+    else startAnimation();
   }
 
   // 3. Typewriter Animation
