@@ -334,38 +334,32 @@
           <div class="timeline-entry reveal">
             <div class="timeline-marker"><div class="marker-dot"></div></div>
             <div class="card timeline-content">
-              <div class="timeline-header"><div><span class="timeline-tag">Android App · v3.0 MVP Completed</span><h3 class="timeline-name">GainTrack v3.0 — Fitness &amp; Weight-Gain Tracker</h3></div><span class="timeline-date">2026</span></div>
-              <p class="timeline-text">A native Android fitness app I built to make healthy weight gain and home strength training easier to track. Version 3 includes a four-day no-equipment workout plan tailored to push-up ability, Sri Lankan food and protein logging, optional AI-assisted food-photo nutrition estimates, and weight and workout progress tracking. Food-photo results are estimates that users can review before saving.</p>
-              <div class="gaintrack-gallery" role="group" aria-label="Two HD GainTrack interface previews">
+              <div class="timeline-header"><div><span class="timeline-tag">Android App · v4.0 Workout-Only MVP</span><h3 class="timeline-name">GainTrack Strength — No-Equipment Workout Coach</h3></div><span class="timeline-date">2026</span></div>
+              <p class="timeline-text">A focused Android strength-training app I built for people who want to work out consistently at home, without gym equipment. GainTrack v4 provides a personalized four-day plan, push-up difficulty levels, easy set-by-set workout logging, an automatic rest timer, recovery-day guidance, and weekly progress tracking. It also lets users update their current weight and next milestone. The app works offline, and its workout experience is intentionally simple.</p>
+              <div class="gaintrack-gallery" role="group" aria-label="GainTrack v4 workout-only interface preview">
                 <figure class="gaintrack-shot">
-                  <a href="./assets/images/gaintrack-workout-hd.webp" target="_blank" rel="noopener" aria-label="Open full HD GainTrack workout interface preview">
-                    <img src="./assets/images/gaintrack-workout-hd.webp" alt="GainTrack workout interface preview with personal starting profile, four-day strength plan and training schedule" width="720" height="1279" loading="lazy" decoding="async">
+                  <a href="./assets/images/gaintrack-v4-strength-hd.webp" target="_blank" rel="noopener noreferrer" aria-label="Open high-resolution GainTrack v4 workout dashboard image">
+                    <img src="./assets/images/gaintrack-v4-strength-hd.webp" alt="GainTrack Strength v4 workout dashboard showing a four-day no-equipment plan, starting profile, push-up level, today's chest and shoulder workout and recovery guidance" width="863" height="1823" loading="lazy" decoding="async">
                   </a>
-                  <figcaption>Workouts &amp; strength plan</figcaption>
-                </figure>
-                <figure class="gaintrack-shot">
-                  <a href="./assets/images/gaintrack-nutrition-hd.webp" target="_blank" rel="noopener" aria-label="Open full HD GainTrack nutrition interface preview">
-                    <img src="./assets/images/gaintrack-nutrition-hd.webp" alt="GainTrack nutrition interface preview with calorie and protein totals, AI food camera and Sri Lankan meal diary" width="720" height="1279" loading="lazy" decoding="async">
-                  </a>
-                  <figcaption>Nutrition &amp; AI food camera</figcaption>
+                  <figcaption>GainTrack Strength v4 · Workout dashboard</figcaption>
                 </figure>
               </div>
-              <p class="case-study-gallery-note">Two high-definition illustrative UI previews recreated from actual GainTrack v3 screenshots. Select an image to view it at full size; small details may differ from the installed app.</p>
-              <div class="tag-row"><span class="tech-tag">Kotlin</span><span class="tech-tag">Jetpack Compose</span><span class="tech-tag">Room Database</span><span class="tech-tag">Gemini API</span><span class="tech-tag">GitHub Actions</span><span class="tech-tag">Android</span></div>
+              <p class="case-study-gallery-note">High-definition illustrative recreation based on my actual v4 workout screen. Tap to view the full image; small visual details may differ from the installed app.</p>
+              <div class="tag-row"><span class="tech-tag">Kotlin</span><span class="tech-tag">Jetpack Compose</span><span class="tech-tag">Material 3</span><span class="tech-tag">Local Storage</span><span class="tech-tag">GitHub Actions</span><span class="tech-tag">Android</span></div>
               <div class="tag-row">
-                <a class="tech-tag" href="https://github.com/mohamedrizee2005-ship-it/GainTrack/tree/main" target="_blank" rel="noopener noreferrer" aria-label="View merged GainTrack version 3 source code on GitHub">View v3 Source Code ↗</a>
-                <a class="tech-tag" href="https://github.com/mohamedrizee2005-ship-it/GainTrack/releases/tag/v3.0.0" target="_blank" rel="noopener noreferrer" aria-label="View GainTrack version 3 Android release and APK">Android v3 Release ↗</a>
+                <a class="tech-tag" href="https://github.com/mohamedrizee2005-ship-it/GainTrack/tree/main" target="_blank" rel="noopener noreferrer" aria-label="View GainTrack Strength version 4 source code on GitHub">View v4 Source Code ↗</a>
+                <a class="tech-tag" href="https://github.com/mohamedrizee2005-ship-it/GainTrack/releases/tag/v4.0.0" target="_blank" rel="noopener noreferrer" aria-label="View the GainTrack Strength version 4 Android APK release">Android v4 Release ↗</a>
               </div>
 
-              <!-- GainTrack engineering case study -->
+              <!-- GainTrack workout-only engineering case study -->
               <details class="project-case-study">
-                <summary>How I built GainTrack v3 <span aria-hidden="true">+</span></summary>
+                <summary>How I built GainTrack Strength v4 <span aria-hidden="true">+</span></summary>
                 <div class="case-study-body">
-                  <p><strong>The problem:</strong> Tracking weight gain, protein intake, and strength training can be confusing when meals are Sri Lankan and gym equipment is not available.</p>
-                  <p><strong>My approach:</strong> I built an Android app with a four-day bodyweight plan, adjustable push-up difficulty, daily nutrition logs, weekly progress tracking, and a food-photo analysis flow that asks users to review estimates.</p>
-                  <p><strong>How it works:</strong> Kotlin and Jetpack Compose power the interface; Room stores local records. The optional Gemini-powered camera suggests foods and approximate nutrition, while GitHub Actions builds the Android APK.</p>
-                  <p><strong>What I learned:</strong> I practiced working with Android UI states, local data, CI builds, exercise progression, and the limitations of AI-generated calorie estimates. I also fixed system-bar spacing and build issues through version 3.</p>
-                  <p class="case-study-note">Version 3 is a working Android MVP. Food-photo estimates are approximate and require user review; the APK is a debug build rather than a Play Store release.</p>
+                  <p><strong>The problem:</strong> Starting strength training at home can be confusing without a clear routine, realistic progressions or gym equipment. I wanted an easy way to stay consistent and track training progress.</p>
+                  <p><strong>My solution:</strong> I designed a four-day equipment-free routine with push-up variations matched to ability, exercise instructions, set checkmarks, a rest countdown, recovery days and a 12-week consistency view. The profile also tracks a simple weight milestone.</p>
+                  <p><strong>How it works:</strong> Kotlin, Jetpack Compose and Material 3 power the Android interface. Workout checkmarks and settings are stored locally, with earlier app data preserved for upgrades. GitHub Actions compiles the downloadable Android APK.</p>
+                  <p><strong>What I improved:</strong> I simplified the earlier multi-feature app into three focused sections—Today, Plan and Progress—and improved the workout flow with animated feedback, a rest timer and recovery of unfinished sets.</p>
+                  <p class="case-study-note">Version 4 is a workout-only Android MVP, not a medically personalized training service or Play Store release. The downloadable APK is a development build. Sufficient food intake and rest are still important for healthy weight and muscle gain.</p>
                 </div>
               </details>
             </div>

@@ -1917,19 +1917,61 @@ input, textarea {
 }
 @media (max-width: 640px) {
   .bg-canvas { display: none; } /* Avoid continuous GPU/CPU canvas work on small screens */
-  .gaintrack-gallery {
-    margin-block: 0.8rem;
-    grid-auto-flow: column;
-    grid-auto-columns: minmax(220px, 77%);
-    grid-template-columns: none;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-padding-inline: 2px;
-    overscroll-behavior-inline: contain;
-    padding-bottom: 0.65rem;
-    -webkit-overflow-scrolling: touch;
-  }
-  .gaintrack-shot { scroll-snap-align: start; }
-  .gaintrack-shot img { height: 350px; }
-  .gaintrack-shot figcaption { font-size: 0.77rem; }
+  /* One focused HD workout preview instead of a long screenshot carousel. */
+.gaintrack-gallery {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0 0.65rem;
+}
+.gaintrack-shot {
+  width: min(100%, 300px);
+  min-width: 0;
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  text-align: center;
+}
+.gaintrack-shot a {
+  display: block;
+  text-decoration: none;
+  border-radius: 16px;
+}
+.gaintrack-shot img {
+  display: block;
+  width: 100%;
+  height: 410px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 16px;
+  background: #080f1d;
+  border: 1px solid var(--border-color);
+  transition: transform 180ms ease, border-color 180ms ease;
+}
+.gaintrack-shot a:hover img {
+  transform: translateY(-3px);
+  border-color: var(--accent-cyan);
+}
+.gaintrack-shot a:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 3px;
+}
+.gaintrack-shot figcaption {
+  padding-top: 0.5rem;
+  text-align: center;
+}
+.case-study-gallery-note {
+  margin-top: 0.35rem;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+@media (max-width: 640px) {
+  .bg-canvas { display: none; }
+  .gaintrack-gallery { margin-block: 0.8rem; }
+  .gaintrack-shot { width: min(100%, 255px); }
+  .gaintrack-shot img { height: 342px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gaintrack-shot img { transition: none; }
+  .gaintrack-shot a:hover img { transform: none; }
 }
