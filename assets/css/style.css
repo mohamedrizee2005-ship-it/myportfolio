@@ -1897,7 +1897,9 @@ input, textarea {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0.75rem;
 }
-.gaintrack-shot { display: block; color: var(--text-muted); font-size: 0.8rem; text-decoration: none; }
+.gaintrack-shot { display: block; min-width: 0; margin: 0; color: var(--text-muted); font-size: 0.8rem; text-decoration: none; }
+.gaintrack-shot a { display: block; text-decoration: none; }
+.case-study-gallery-note { margin-top: 0.2rem; color: var(--text-muted); font-size: 0.8rem; line-height: 1.55; }
 .gaintrack-shot img {
   display: block;
   width: 100%;
