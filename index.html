@@ -45,7 +45,7 @@
 
   <title>Mohamed Rizny | Management &amp; IT Undergraduate &amp; Aspiring AI Engineer</title>
 
-  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+  <link rel="icon" href="./assets/images/icon-app.svg" type="image/svg+xml">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,6 +55,7 @@
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
   <!-- Interactive 3D Background Canvas -->
   <canvas id="bg-canvas" class="bg-canvas" aria-hidden="true"></canvas>
@@ -335,6 +336,55 @@
             <div class="card timeline-content">
               <div class="timeline-header"><div><span class="timeline-tag">Android App · v3.0 MVP Completed</span><h3 class="timeline-name">GainTrack v3.0 — Fitness &amp; Weight-Gain Tracker</h3></div><span class="timeline-date">2026</span></div>
               <p class="timeline-text">A native Android fitness app I built to make healthy weight gain and home strength training easier to track. Version 3 includes a four-day no-equipment workout plan tailored to push-up ability, Sri Lankan food and protein logging, optional AI-assisted food-photo nutrition estimates, and weight and workout progress tracking. Food-photo results are estimates that users can review before saving.</p>
+              <!-- Genuine Samsung Android screenshots; optimized WebP files are bundled with this portfolio. -->
+              <div class="gaintrack-gallery" aria-label="GainTrack application screenshots">
+                <figure class="gaintrack-shot">
+                  <a href="./assets/images/gaintrack-workout-home.webp" target="_blank" rel="noopener noreferrer" aria-label="View full GainTrack workout dashboard screenshot">
+                    <img src="./assets/images/gaintrack-workout-home.webp" alt="GainTrack Android workout dashboard showing the personal profile, recovery-day card, and four-day plan" width="460" height="997" loading="lazy" decoding="async">
+                  </a>
+                  <figcaption>Workout dashboard</figcaption>
+                </figure>
+                <figure class="gaintrack-shot">
+                  <a href="./assets/images/gaintrack-training-split.webp" target="_blank" rel="noopener noreferrer" aria-label="View full GainTrack weekly training plan screenshot">
+                    <img src="./assets/images/gaintrack-training-split.webp" alt="GainTrack four-day no-equipment split listing chest, back, shoulders, arms, and light-leg workouts" width="460" height="997" loading="lazy" decoding="async">
+                  </a>
+                  <figcaption>Four-day workout plan</figcaption>
+                </figure>
+                <figure class="gaintrack-shot">
+                  <a href="./assets/images/gaintrack-nutrition-camera.webp" target="_blank" rel="noopener noreferrer" aria-label="View full GainTrack food camera screenshot">
+                    <img src="./assets/images/gaintrack-nutrition-camera.webp" alt="GainTrack nutrition dashboard displaying calorie and protein totals alongside the AI food camera controls" width="460" height="997" loading="lazy" decoding="async">
+                  </a>
+                  <figcaption>AI-assisted food camera</figcaption>
+                </figure>
+                <figure class="gaintrack-shot">
+                  <a href="./assets/images/gaintrack-food-diary.webp" target="_blank" rel="noopener noreferrer" aria-label="View full GainTrack meal diary screenshot">
+                    <img src="./assets/images/gaintrack-food-diary.webp" alt="GainTrack Sri Lankan food diary with logged meals, estimated nutrients, and daily nutrition suggestions" width="460" height="997" loading="lazy" decoding="async">
+                  </a>
+                  <figcaption>Food diary and guidance</figcaption>
+                </figure>
+              </div>
+
+              <details class="gaintrack-case-study">
+                <summary>Read the mini case study — how I built GainTrack</summary>
+                <div class="gaintrack-case-study-content">
+                  <div>
+                    <h4>Problem</h4>
+                    <p>I wanted a simple way to follow no-equipment strength workouts and monitor weight gain, while logging familiar Sri Lankan meals instead of relying only on international food lists.</p>
+                  </div>
+                  <div>
+                    <h4>My approach</h4>
+                    <p>I developed a native Kotlin and Jetpack Compose app with local Room storage, a four-day beginner workout plan, adjustable push-up difficulty, nutrition logs, and optional Gemini-based food-photo estimates that users review before saving.</p>
+                  </div>
+                  <div>
+                    <h4>Result</h4>
+                    <p>GainTrack v3.0 now has a working Android MVP with an automated GitHub Actions APK build and the real app screens shown above. It is a personal project, not a Play Store release or clinically validated nutrition tool.</p>
+                  </div>
+                  <div>
+                    <h4>What I learned and what comes next</h4>
+                    <p>I practiced Android UI development, local data handling, AI integration, workout progression design, and debugging APK builds. Next I want to improve personalized calorie estimates, food portion accuracy, and real-device usability.</p>
+                  </div>
+                </div>
+              </details>
               <div class="tag-row"><span class="tech-tag">Kotlin</span><span class="tech-tag">Jetpack Compose</span><span class="tech-tag">Room Database</span><span class="tech-tag">Gemini API</span><span class="tech-tag">GitHub Actions</span><span class="tech-tag">Android</span></div>
               <div class="tag-row">
                 <a class="tech-tag" href="https://github.com/mohamedrizee2005-ship-it/GainTrack/tree/gaintrack-v3-focused-muscle-coach" target="_blank" rel="noopener noreferrer" aria-label="View GainTrack version 3 source code on GitHub">View v3 Source Code ↗</a>
