@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#f6f8fa">
+  <meta name="theme-color" content="#030712">
   <meta name="description" content="Portfolio of Mohamed Rizny, a University of Kelaniya Management & IT undergraduate learning AI and software development. Explore projects, technical skills, and certifications.">
   <meta name="author" content="Mohamed Rizny">
   <link rel="canonical" href="https://riznysm.me/">
@@ -50,31 +50,38 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <!-- A static background keeps the focus on the work. -->
+  <!-- Interactive 3D Background Canvas -->
+  <canvas id="bg-canvas" class="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- Ambient Glow & Grid -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="ambient-glow glow-cyan" id="glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow glow-violet" id="glow-2" aria-hidden="true"></div>
+  <div class="cursor-glow" data-cursor-glow aria-hidden="true"></div>
 
   <!-- Header Navigation -->
   <header class="header" data-header>
     <div class="header-container">
 
       <a href="#home" class="logo">
-        <span class="logo-badge">MR.</span>
+        <span class="logo-badge">&lt;MR /&gt;</span>
         <div class="logo-text">
           <span class="logo-title">Mohamed Rizny</span>
-          <span class="logo-subtitle">Management &amp; IT Student</span>
+          <span class="logo-subtitle">Aspiring AI Engineer</span>
         </div>
       </a>
 
       <nav class="nav-menu" data-nav-menu aria-label="Main navigation">
-        <a href="#projects" class="nav-link" data-nav-link>Projects</a>
         <a href="#about" class="nav-link" data-nav-link>About</a>
         <a href="#skills" class="nav-link" data-nav-link>Skills</a>
+        <a href="#projects" class="nav-link" data-nav-link>Projects</a>
         <a href="#certificates" class="nav-link" data-nav-link>Certifications</a>
         <a href="#contact" class="nav-link" data-nav-link>Contact</a>
       </nav>
@@ -105,11 +112,24 @@
     <section id="home" class="hero-section">
       <div class="hero-container">
 
-        <!-- Profile photo: original image, without visual effects or substitutes. -->
+        <!-- Profile Avatar -->
         <div class="avatar-container">
+          <div class="avatar-halo"></div>
+          <div class="avatar-orbit"></div>
           <div class="avatar-frame">
             <div class="avatar-ring">
-              <img src="./assets/images/my-avatar.png" alt="Portrait of Mohamed Rizny" class="avatar-image" width="315" height="315" fetchpriority="high" decoding="async">
+              <img
+                src="./assets/images/my-avatar.png"
+                alt="Portrait of Mohamed Rizny"
+                class="avatar-image"
+                fetchpriority="high"
+                decoding="async"
+                onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80';">
+              <div class="avatar-scanner"></div>
+            </div>
+            <div class="status-badge">
+              <span class="status-dot"></span>
+              <span class="status-label">Aspiring AI Engineer</span>
             </div>
           </div>
         </div>
@@ -117,23 +137,42 @@
         <!-- Academic Tag -->
         <div class="tag-wrapper">
           <span class="meta-tag">
-            University of Kelaniya &bull; Sri Lanka
+            <svg class="spark-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
+            Management &amp; IT Undergraduate &bull; University of Kelaniya
           </span>
         </div>
 
         <!-- Headline -->
-        <h1 class="hero-heading"><span class="hero-eyebrow">Hi, I'm</span><span class="highlight-gradient">Mohamed Rizny.</span></h1>
+        <h1 class="hero-heading">
+          Learning and Building Towards <br class="desktop-only">
+          <span class="highlight-gradient">AI Engineering</span>
+        </h1>
 
-        <p class="hero-subtitle">Management &amp; IT Undergraduate <span aria-hidden="true">·</span> Aspiring AI Engineer</p>
+        <!-- Typewriter Subtitle -->
+        <p class="hero-subtitle">
+          <span class="typewriter" data-typewriter='["Learning AI and software development", "Building practical projects", "Exploring app and web development", "Improving my programming skills"]'></span>
+          <span class="cursor">|</span>
+        </p>
 
         <!-- Description -->
         <p class="hero-bio">
-          I study at the University of Kelaniya and learn by building software. My recent projects include GainTrack, an offline Android workout app, and HallSync, a lecture hall booking system built with my university group.
+          I'm Mohamed Rizny, a Management &amp; IT undergraduate at the University of Kelaniya. I'm learning AI and software development by building practical projects and strengthening my programming skills.
         </p>
 
+        <!-- CTA Buttons -->
         <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary">View Projects <span aria-hidden="true">↗</span></a>
-          <a href="mailto:mohamedrizee2005@gmail.com" class="btn btn-secondary">Email me</a>
+          <a href="#certificates" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <span>View Certifications</span>
+          </a>
+          <a href="#projects" class="btn btn-secondary">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <span>Explore Projects</span>
+          </a>
+          <a href="mailto:mohamedrizee2005@gmail.com" class="btn btn-secondary">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            <span>Email Me</span>
+          </a>
         </div>
 
         <!-- Quick Links / Badges -->
@@ -159,103 +198,6 @@
       </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-      <div class="container">
-
-        <div class="section-heading reveal">
-          <span class="section-subtitle">Selected work</span>
-          <h2 class="section-title">Projects</h2>
-        </div>
-
-        <div class="timeline-container">
-          <div class="timeline-entry reveal">
-            <div class="timeline-marker"><div class="marker-dot"></div></div>
-            <div class="card timeline-content">
-              <div class="timeline-header"><div><span class="timeline-tag">Android App · v4.0 Workout-Only MVP</span><h3 class="timeline-name">GainTrack Strength — No-Equipment Workout Coach</h3></div><span class="timeline-date">2026</span></div>
-              <p class="timeline-text">I built GainTrack Strength to make home workouts simpler. The offline Android app combines a four-day plan, push-up levels, set logging, a rest timer and a weekly progress view.</p>
-              <div class="project-proof" aria-label="GainTrack quick project details">
-                <p><strong>Problem</strong><span>Following home workouts consistently without equipment</span></p>
-                <p><strong>What I built</strong><span>Workout guidance, set tracking, and offline progress history</span></p>
-                <p><strong>What I learned</strong><span>A focused workout flow works better than too many unrelated features</span></p>
-              </div>
-              <div class="gaintrack-gallery" role="group" aria-label="GainTrack v4 workout-only interface preview">
-                <figure class="gaintrack-shot">
-                  <a href="./assets/images/gaintrack-v4-strength-hd.webp" target="_blank" rel="noopener noreferrer" aria-label="Open high-resolution GainTrack v4 workout dashboard image">
-                    <img src="./assets/images/gaintrack-v4-strength-hd.webp" alt="GainTrack Strength v4 workout dashboard showing a four-day no-equipment plan, starting profile, push-up level, today's chest and shoulder workout and recovery guidance" width="863" height="1823" loading="lazy" decoding="async">
-                  </a>
-                  <figcaption>GainTrack Strength v4 · Workout dashboard</figcaption>
-                </figure>
-              </div>
-              <p class="case-study-gallery-note">High-definition illustrative recreation based on my actual v4 workout screen. Tap to view the full image; small visual details may differ from the installed app.</p>
-              <div class="tag-row"><span class="tech-tag">Kotlin</span><span class="tech-tag">Jetpack Compose</span><span class="tech-tag">Material 3</span><span class="tech-tag">Local Storage</span><span class="tech-tag">GitHub Actions</span><span class="tech-tag">Android</span></div>
-              <div class="tag-row">
-                <a class="tech-tag" href="https://github.com/mohamedrizee2005-ship-it/GainTrack/tree/main" target="_blank" rel="noopener noreferrer" aria-label="View GainTrack Strength version 4 source code on GitHub">View v4 Source Code ↗</a>
-                <a class="tech-tag" href="https://github.com/mohamedrizee2005-ship-it/GainTrack/releases/tag/v4.0.0" target="_blank" rel="noopener noreferrer" aria-label="View the GainTrack Strength version 4 Android APK release">Android v4 Release ↗</a>
-              </div>
-
-              <!-- GainTrack workout-only engineering case study -->
-              <details class="project-case-study">
-                <summary>How I built GainTrack Strength v4 <span aria-hidden="true">+</span></summary>
-                <div class="case-study-body">
-                  <p><strong>The problem:</strong> Starting strength training at home can be confusing without a clear routine, realistic progressions or gym equipment. I wanted an easy way to stay consistent and track training progress.</p>
-                  <p><strong>My solution:</strong> I designed a four-day equipment-free routine with push-up variations matched to ability, exercise instructions, set checkmarks, a rest countdown, recovery days and a 12-week consistency view. The profile also tracks a simple weight milestone.</p>
-                  <p><strong>How it works:</strong> Kotlin, Jetpack Compose and Material 3 power the Android interface. Workout checkmarks and settings are stored locally, with earlier app data preserved for upgrades. GitHub Actions compiles the downloadable Android APK.</p>
-                  <p><strong>What I improved:</strong> I simplified the earlier multi-feature app into three focused sections—Today, Plan and Progress—and improved the workout flow with animated feedback, a rest timer and recovery of unfinished sets.</p>
-                  <p class="case-study-note">Version 4 is a workout-only Android MVP, not a medically personalized training service or Play Store release. The downloadable APK is a development build. Sufficient food intake and rest are still important for healthy weight and muscle gain.</p>
-                </div>
-              </details>
-            </div>
-          </div>
-
-          <div class="timeline-entry reveal">
-            <div class="timeline-marker"><div class="marker-dot"></div></div>
-            <div class="card timeline-content">
-              <div class="timeline-header"><div><span class="timeline-tag">University Group Project · Completed</span><h3 class="timeline-name">HallSync — Lecture Hall Booking &amp; Campus Space Management</h3></div><span class="timeline-date">2026</span></div>
-              <p class="timeline-text">HallSync is our university group's lecture hall booking project. It uses a responsive browser interface with Java and MySQL to support hall searches, requests, approvals and reporting.</p>
-              <div class="project-proof" aria-label="HallSync quick project details">
-                <p><strong>Problem</strong><span>Manual hall booking and clashes between approved reservations</span></p>
-                <p><strong>Team solution</strong><span>Role-based booking workflow, validation and administrator reports</span></p>
-                <p><strong>My learning focus</strong><span>Connecting ER modelling, Java services, JDBC and database rules</span></p>
-              </div>
-              <div class="hallsync-gallery" role="group" aria-label="HallSync application screenshots">
-                <figure class="hallsync-shot">
-                  <a href="https://raw.githubusercontent.com/mohamedrizee2005-ship-it/HallSync-Lecture-Hall-Booking-System/main/.github/assets/hallsync-dark.webp" target="_blank" rel="noopener noreferrer" aria-label="Open full HallSync sign-in screenshot">
-                    <img src="https://raw.githubusercontent.com/mohamedrizee2005-ship-it/HallSync-Lecture-Hall-Booking-System/main/.github/assets/hallsync-dark.webp" alt="HallSync University of Kelaniya dark-theme sign-in screen" loading="lazy" decoding="async">
-                  </a>
-                  <figcaption>Sign-in &amp; university branding</figcaption>
-                </figure>
-                <figure class="hallsync-shot">
-                  <a href="https://raw.githubusercontent.com/mohamedrizee2005-ship-it/HallSync-Lecture-Hall-Booking-System/main/.github/assets/hallsync-reports.webp" target="_blank" rel="noopener noreferrer" aria-label="Open full HallSync reports screenshot">
-                    <img src="https://raw.githubusercontent.com/mohamedrizee2005-ship-it/HallSync-Lecture-Hall-Booking-System/main/.github/assets/hallsync-reports.webp" alt="HallSync reporting interface showing booking and campus-space information" loading="lazy" decoding="async">
-                  </a>
-                  <figcaption>Reports &amp; booking insights</figcaption>
-                </figure>
-              </div>
-              <p class="case-study-gallery-note">Actual screenshots from the finished HallSync GitHub repository. Select either image to see it in full.</p>
-              <div class="tag-row"><span class="tech-tag">Java</span><span class="tech-tag">HTML/CSS/JavaScript</span><span class="tech-tag">MySQL</span><span class="tech-tag">JDBC</span><span class="tech-tag">Maven</span><span class="tech-tag">GitHub Actions</span></div>
-              <div class="tag-row">
-                <a class="tech-tag" href="https://github.com/mohamedrizee2005-ship-it/HallSync-Lecture-Hall-Booking-System" target="_blank" rel="noopener noreferrer">View Source Code ↗</a>
-                <a class="tech-tag" href="https://github.com/mohamedrizee2005-ship-it/HallSync-Lecture-Hall-Booking-System#first-time-setup-windows" target="_blank" rel="noopener noreferrer">Setup Guide ↗</a>
-              </div>
-              <details class="project-case-study">
-                <summary>How our group built HallSync <span aria-hidden="true">+</span></summary>
-                <div class="case-study-body">
-                  <p><strong>The problem:</strong> Manual lecture hall reservations make it difficult to check availability, avoid timetable conflicts and track approvals.</p>
-                  <p><strong>Our solution:</strong> Role-based access for students, lecturers and administrators; searchable halls and schedules; booking requests and approvals; maintenance closures; and CSV or calendar exports.</p>
-                  <p><strong>How it works:</strong> Java services and JDBC connect a responsive HTML/CSS/JavaScript interface to MySQL. Database validation and coordinated transactions prevent overlapping approved bookings.</p>
-                  <p><strong>What we tested:</strong> GitHub Actions checks database rules, application behavior, browser interactions and the Windows launcher. The README explains installation, configuration and upgrades.</p>
-                  <p><strong>What I studied:</strong> How the ER diagram, MySQL tables, JDBC connection and booking-conflict validation fit together, so I can explain how this group project works. Feature ownership is not assigned to one person here.</p>
-                  <p class="case-study-note">HallSync is a completed university software project designed for local demonstration, not a live university-wide booking service.</p>
-                </div>
-              </details>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
     <!-- About Section -->
     <section id="about" class="section">
       <div class="container">
@@ -273,10 +215,10 @@
               I am pursuing a <strong>B.Sc. (Hons.) in Management &amp; Information Technology (MIT)</strong> at the <strong>Faculty of Science, University of Kelaniya</strong>. My expected graduation year is <strong>2029</strong>.
             </p>
             <p>
-              I enjoy understanding how software works, from writing code to connecting an interface with a database. Lately, I've been learning more about <strong>AI</strong>, <strong>Java</strong>, <strong>Python</strong> and building practical applications.
+              I am interested in how artificial intelligence and software can help solve real-world problems. I am building my knowledge in <strong>AI fundamentals</strong>, <strong>programming</strong>, and <strong>software development</strong> through university studies and personal learning.
             </p>
             <p>
-              I want to become a better developer by building, testing and improving real projects. Outside coursework, I'm part of the Rotaract Club at the University of Kelaniya.
+              My goal is to keep improving my technical skills and turn what I learn into useful, practical applications. I am also a member of the Rotaract Club of the University of Kelaniya, where I look forward to contributing to university and community activities.
             </p>
 
             <div class="stats-grid">
@@ -355,24 +297,110 @@
 
         <div class="skills-grid">
           <div class="card skill-card skill-card-featured reveal">
-            <div class="skill-header"><div class="skill-emoji">AI</div><div><h3>AI &amp; Emerging Technologies</h3><span class="skill-category">Learning Focus</span></div></div>
+            <div class="skill-header"><div class="skill-emoji">🤖</div><div><h3>AI &amp; Emerging Technologies</h3><span class="skill-category">Learning Focus</span></div></div>
             <div class="pill-group"><span class="pill pill-accent">Azure AI Fundamentals</span><span class="pill">AI Engineering (Learning)</span></div>
             <div class="skill-footer"><span class="indicator-dot"></span><span>Building foundational AI knowledge</span></div>
           </div>
           <div class="card skill-card reveal">
-            <div class="skill-header"><div class="skill-emoji">DEV</div><div><h3>Software &amp; Web</h3><span class="skill-category">Programming</span></div></div>
+            <div class="skill-header"><div class="skill-emoji">💻</div><div><h3>Software &amp; Web</h3><span class="skill-category">Programming</span></div></div>
             <div class="pill-group"><span class="pill">Python</span><span class="pill">Java</span><span class="pill">C++</span><span class="pill">Kotlin</span><span class="pill">Object-Oriented Programming</span><span class="pill">HTML5</span><span class="pill">CSS3</span><span class="pill">JavaScript</span></div>
             <div class="skill-footer"><span class="indicator-dot"></span><span>Programming and application development</span></div>
           </div>
           <div class="card skill-card reveal">
-            <div class="skill-header"><div class="skill-emoji">DB</div><div><h3>Databases &amp; Tools</h3><span class="skill-category">Development Tools</span></div></div>
+            <div class="skill-header"><div class="skill-emoji">🗄️</div><div><h3>Databases &amp; Tools</h3><span class="skill-category">Development Tools</span></div></div>
             <div class="pill-group"><span class="pill">SQL</span><span class="pill">MySQL</span><span class="pill">Room Database</span><span class="pill">Git</span><span class="pill">GitHub</span><span class="pill">VS Code</span><span class="pill">NetBeans</span></div>
             <div class="skill-footer"><span class="indicator-dot"></span><span>Database fundamentals and version control</span></div>
           </div>
           <div class="card skill-card reveal">
-            <div class="skill-header"><div class="skill-emoji">APP</div><div><h3>Android Development</h3><span class="skill-category">Currently Learning</span></div></div>
+            <div class="skill-header"><div class="skill-emoji">📱</div><div><h3>Android Development</h3><span class="skill-category">Currently Learning</span></div></div>
             <div class="pill-group"><span class="pill">Android</span><span class="pill">Jetpack Compose</span><span class="pill">Kotlin Coroutines</span></div>
             <div class="skill-footer"><span class="indicator-dot"></span><span>Developing an Android application</span></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="section-subtitle">Experience</span>
+          <h2 class="section-title">Featured Projects</h2>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-entry reveal">
+            <div class="timeline-marker"><div class="marker-dot"></div></div>
+            <div class="card timeline-content">
+              <div class="timeline-header"><div><span class="timeline-tag">Android App · v4.0 Workout-Only MVP</span><h3 class="timeline-name">GainTrack Strength — No-Equipment Workout Coach</h3></div><span class="timeline-date">2026</span></div>
+              <p class="timeline-text">A focused Android strength-training app I built for people who want to work out consistently at home, without gym equipment. GainTrack v4 provides a personalized four-day plan, push-up difficulty levels, easy set-by-set workout logging, an automatic rest timer, recovery-day guidance, and weekly progress tracking. It also lets users update their current weight and next milestone. The app works offline, and its workout experience is intentionally simple.</p>
+              <div class="gaintrack-gallery" role="group" aria-label="GainTrack v4 workout-only interface preview">
+                <figure class="gaintrack-shot">
+                  <a href="./assets/images/gaintrack-v4-strength-hd.webp" target="_blank" rel="noopener noreferrer" aria-label="Open high-resolution GainTrack v4 workout dashboard image">
+                    <img src="./assets/images/gaintrack-v4-strength-hd.webp" alt="GainTrack Strength v4 workout dashboard showing a four-day no-equipment plan, starting profile, push-up level, today's chest and shoulder workout and recovery guidance" width="863" height="1823" loading="lazy" decoding="async">
+                  </a>
+                  <figcaption>GainTrack Strength v4 · Workout dashboard</figcaption>
+                </figure>
+              </div>
+              <p class="case-study-gallery-note">High-definition illustrative recreation based on my actual v4 workout screen. Tap to view the full image; small visual details may differ from the installed app.</p>
+              <div class="tag-row"><span class="tech-tag">Kotlin</span><span class="tech-tag">Jetpack Compose</span><span class="tech-tag">Material 3</span><span class="tech-tag">Local Storage</span><span class="tech-tag">GitHub Actions</span><span class="tech-tag">Android</span></div>
+              <div class="tag-row">
+                <a class="tech-tag" href="https://github.com/mohamedrizee2005-ship-it/GainTrack/tree/main" target="_blank" rel="noopener noreferrer" aria-label="View GainTrack Strength version 4 source code on GitHub">View v4 Source Code ↗</a>
+                <a class="tech-tag" href="https://github.com/mohamedrizee2005-ship-it/GainTrack/releases/tag/v4.0.0" target="_blank" rel="noopener noreferrer" aria-label="View the GainTrack Strength version 4 Android APK release">Android v4 Release ↗</a>
+              </div>
+
+              <!-- GainTrack workout-only engineering case study -->
+              <details class="project-case-study">
+                <summary>How I built GainTrack Strength v4 <span aria-hidden="true">+</span></summary>
+                <div class="case-study-body">
+                  <p><strong>The problem:</strong> Starting strength training at home can be confusing without a clear routine, realistic progressions or gym equipment. I wanted an easy way to stay consistent and track training progress.</p>
+                  <p><strong>My solution:</strong> I designed a four-day equipment-free routine with push-up variations matched to ability, exercise instructions, set checkmarks, a rest countdown, recovery days and a 12-week consistency view. The profile also tracks a simple weight milestone.</p>
+                  <p><strong>How it works:</strong> Kotlin, Jetpack Compose and Material 3 power the Android interface. Workout checkmarks and settings are stored locally, with earlier app data preserved for upgrades. GitHub Actions compiles the downloadable Android APK.</p>
+                  <p><strong>What I improved:</strong> I simplified the earlier multi-feature app into three focused sections—Today, Plan and Progress—and improved the workout flow with animated feedback, a rest timer and recovery of unfinished sets.</p>
+                  <p class="case-study-note">Version 4 is a workout-only Android MVP, not a medically personalized training service or Play Store release. The downloadable APK is a development build. Sufficient food intake and rest are still important for healthy weight and muscle gain.</p>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <div class="timeline-entry reveal">
+            <div class="timeline-marker"><div class="marker-dot"></div></div>
+            <div class="card timeline-content">
+              <div class="timeline-header"><div><span class="timeline-tag">University Group Project · Completed</span><h3 class="timeline-name">HallSync — Lecture Hall Booking &amp; Campus Space Management</h3></div><span class="timeline-date">2026</span></div>
+              <p class="timeline-text">A completed university group project for managing lecture halls through a responsive browser interface and a Java/MySQL backend. Students can explore halls and schedules; lecturers can request available rooms; administrators review bookings, manage campus spaces and generate reports. Transactional checks help prevent conflicting approved reservations.</p>
+              <div class="hallsync-gallery" role="group" aria-label="HallSync application screenshots">
+                <figure class="hallsync-shot">
+                  <a href="https://raw.githubusercontent.com/mohamedrizee2005-ship-it/HallSync-Lecture-Hall-Booking-System/main/.github/assets/hallsync-dark.webp" target="_blank" rel="noopener noreferrer" aria-label="Open full HallSync sign-in screenshot">
+                    <img src="https://raw.githubusercontent.com/mohamedrizee2005-ship-it/HallSync-Lecture-Hall-Booking-System/main/.github/assets/hallsync-dark.webp" alt="HallSync University of Kelaniya dark-theme sign-in screen" loading="lazy" decoding="async">
+                  </a>
+                  <figcaption>Sign-in &amp; university branding</figcaption>
+                </figure>
+                <figure class="hallsync-shot">
+                  <a href="https://raw.githubusercontent.com/mohamedrizee2005-ship-it/HallSync-Lecture-Hall-Booking-System/main/.github/assets/hallsync-reports.webp" target="_blank" rel="noopener noreferrer" aria-label="Open full HallSync reports screenshot">
+                    <img src="https://raw.githubusercontent.com/mohamedrizee2005-ship-it/HallSync-Lecture-Hall-Booking-System/main/.github/assets/hallsync-reports.webp" alt="HallSync reporting interface showing booking and campus-space information" loading="lazy" decoding="async">
+                  </a>
+                  <figcaption>Reports &amp; booking insights</figcaption>
+                </figure>
+              </div>
+              <p class="case-study-gallery-note">Actual screenshots from the finished HallSync GitHub repository. Select either image to see it in full.</p>
+              <div class="tag-row"><span class="tech-tag">Java</span><span class="tech-tag">HTML/CSS/JavaScript</span><span class="tech-tag">MySQL</span><span class="tech-tag">JDBC</span><span class="tech-tag">Maven</span><span class="tech-tag">GitHub Actions</span></div>
+              <div class="tag-row">
+                <a class="tech-tag" href="https://github.com/mohamedrizee2005-ship-it/HallSync-Lecture-Hall-Booking-System" target="_blank" rel="noopener noreferrer">View Source Code ↗</a>
+                <a class="tech-tag" href="https://github.com/mohamedrizee2005-ship-it/HallSync-Lecture-Hall-Booking-System#first-time-setup-windows" target="_blank" rel="noopener noreferrer">Setup Guide ↗</a>
+              </div>
+              <details class="project-case-study">
+                <summary>How our group built HallSync <span aria-hidden="true">+</span></summary>
+                <div class="case-study-body">
+                  <p><strong>The problem:</strong> Manual lecture hall reservations make it difficult to check availability, avoid timetable conflicts and track approvals.</p>
+                  <p><strong>Our solution:</strong> Role-based access for students, lecturers and administrators; searchable halls and schedules; booking requests and approvals; maintenance closures; and CSV or calendar exports.</p>
+                  <p><strong>How it works:</strong> Java services and JDBC connect a responsive HTML/CSS/JavaScript interface to MySQL. Database validation and coordinated transactions prevent overlapping approved bookings.</p>
+                  <p><strong>What we tested:</strong> GitHub Actions checks database rules, application behavior, browser interactions and the Windows launcher. The README explains installation, configuration and upgrades.</p>
+                  <p class="case-study-note">HallSync is a completed university software project designed for local demonstration, not a live university-wide booking service.</p>
+                </div>
+              </details>
+            </div>
           </div>
         </div>
 
@@ -401,7 +429,8 @@
                 <img
                   src="./assets/images/microsoft-ai.jpeg"
                   alt="Microsoft Certified: Azure AI Fundamentals"
-                  loading="lazy">
+                  loading="lazy"
+                  onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80';">
                 <span class="zoom-button" aria-label="Enlarge certificate image">
                   <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
                 </span>
@@ -431,7 +460,8 @@
                 <img
                   src="./assets/images/ai-skills-fest.png"
                   alt="Microsoft AI Skills Fest 2026"
-                  loading="lazy">
+                  loading="lazy"
+                  onerror="this.src='https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=600&q=80';">
                 <span class="zoom-button" aria-label="Enlarge certificate image">
                   <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
                 </span>
@@ -462,7 +492,8 @@
                 <img
                   src="./assets/images/python.jpeg"
                   alt="freeCodeCamp Python Developer Certification"
-                  loading="lazy">
+                  loading="lazy"
+                  onerror="this.src='https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80';">
                 <span class="zoom-button" aria-label="Enlarge certificate image">
                   <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
                 </span>
@@ -501,7 +532,7 @@
             <div class="glass-card contact-message-card">
               <h3>Let's Connect</h3>
               <p>
-                Have a project idea, internship opportunity or question about my work? I'd be glad to hear from you.
+                I'm open to discussing AI engineering projects, software development internships, or potential collaborations.
               </p>
             </div>
 
@@ -562,8 +593,8 @@
 
           <div class="glass-card contact-form-card reveal">
             <div class="form-title-box">
-              <h3>Write an email</h3>
-              <p>This prepares a draft in your email app. You'll review and send it there.</p>
+              <h3>Send a Message</h3>
+              <p>Fill out the form below to open an email with your message ready to send.</p>
             </div>
 
             <form class="contact-form" id="contact-form">
@@ -580,7 +611,7 @@
 
               <div class="input-group">
                 <label for="subject" class="input-label">Subject</label>
-                <input type="text" name="subject" id="subject" class="form-control" placeholder="About a project or opportunity">
+                <input type="text" name="subject" id="subject" class="form-control" placeholder="Project Inquiry / Opportunity">
               </div>
 
               <div class="input-group">
@@ -590,9 +621,8 @@
 
               <button class="btn btn-primary form-button" type="submit">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
-                <span>Open Email App</span>
+                <span>Send Message</span>
               </button>
-              <p class="form-note" id="contact-form-status" role="status" aria-live="polite">Nothing is sent from this website.</p>
             </form>
           </div>
 
