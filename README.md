@@ -1,40 +1,49 @@
 # Mohamed Rizny — Personal Portfolio
 
-The personal portfolio of a Management & Information Technology undergraduate at the University of Kelaniya. I document what I am learning and building, particularly in software development and AI.
+> Personal developer portfolio of **Mohamed Rizny**, an aspiring AI Engineer and Management & Information Technology undergraduate at the University of Kelaniya.
 
-**Live website:** https://riznysm.me/
+---
 
-## What you'll find
+## 📌 Overview
 
-- **Projects:** GainTrack Strength and HallSync, with preview images, source links and project case studies.
-- **About and skills:** My studies, interests and current technical experience.
-- **Certifications:** Credential and badge highlights.
-- **Contact:** Direct links and a form that opens a draft in your email app. The site does **not** send email directly.
+This repository contains the source code for my personal portfolio website. It showcases my technical competencies, academic trajectory, industry certifications (Microsoft Azure AI, freeCodeCamp), and featured engineering projects.
 
-## Built with
+### ✨ Key Features
 
-Static **HTML, CSS and JavaScript**, responsive layouts, a light/dark theme and **IBM Plex Sans / IBM Plex Mono** typefaces. No build step is needed.
+- **Interactive 3D Neural Tensor Canvas**: Real-time 3D prospective loss manifold and mathematical wave grid built with HTML5 Canvas and Vanilla JavaScript that responds dynamically to mouse movement.
+- **Obsidian Dark & High-Contrast Light Mode**: Fully themed with persistent state via `localStorage` and crisp high-contrast UI borders.
+- **Interactive 3D Physics Cards**: Vanilla JS tilt & spotlight physics on credential cards.
+- **Live Interactive Modal**: Lightbox preview for industry certification badges and certificates.
+- **Clean Responsive Architecture**: Built with modern CSS Grid, Flexbox, and CSS custom properties without bulky external frameworks.
 
-## Run locally
+---
 
-1. Clone or download the repository.
-2. Open `index.html` in a browser (or use VS Code and a local preview extension).
-3. Edit `index.html` for content, `assets/css/style.css` for styling, and `assets/js/script.js` for interactions.
+## 🛠️ Built With
 
-## Structure
+- **HTML5** — Semantic, accessible document structure.
+- **CSS3** — Custom design system, CSS variables, glassmorphism, responsive media queries.
+- **JavaScript (ES6+)** — Canvas rendering engine, typewriter animation, theme persistence, and modal handlers.
+- **Google Fonts** — Plus Jakarta Sans, Space Grotesk & JetBrains Mono.
+
+---
+
+## 📁 Project Structure
 
 ```text
-index.html
-assets/
-  css/style.css
-  js/script.js
-  images/            # Profile, certifications and GainTrack images
-.github/workflows/    # Mobile audit
-CNAME                 # Custom domain
-```
-
-## Notes
-
-HallSync screenshots load from its public project repository. The GainTrack v4 preview is an illustrative recreation, not a literal device screenshot. Both projects are described as student or independent work rather than production deployments.
-
-Before publishing a design change, test navigation, mobile layout, galleries, image paths, the email-draft flow, external links, and the mobile audit workflow.
+mohamed-rizny-portfolio/
+│
+├── index.html              # Main HTML document
+├── LICENSE                 # MIT License
+├── README.md               # Repository documentation
+│
+└── assets/
+    ├── css/
+    │   └── style.css       # Core stylesheets & theme definitions
+    ├── js/
+    │   └── script.js       # 3D canvas manifold, animations & UI logic
+    └── images/
+        ├── my-avatar.png   # Profile portrait
+        ├── microsoft-ai.jpeg
+        ├── ai-skills-fest.png
+        ├── python.jpeg
+        └── logo.ico        # Favicon
