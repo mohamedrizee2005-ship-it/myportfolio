@@ -1,49 +1,43 @@
 # Mohamed Rizny — Personal Portfolio
 
-> Personal developer portfolio of **Mohamed Rizny**, an aspiring AI Engineer and Management & Information Technology undergraduate at the University of Kelaniya.
+My personal portfolio as a Management & Information Technology undergraduate at the University of Kelaniya, working towards a career in AI engineering.
 
----
+**Live website:** [riznysm.me](https://riznysm.me/)
 
-## 📌 Overview
+## What is included
 
-This repository contains the source code for my personal portfolio website. It showcases my technical competencies, academic trajectory, industry certifications (Microsoft Azure AI, freeCodeCamp), and featured engineering projects.
+- An introduction, education details, and contact links.
+- GainTrack Strength, a personal Android workout project.
+- HallSync, a completed university group project using Java and MySQL.
+- Skills, certifications, and a learning badge with issuer links.
+- Responsive layouts, light and dark themes, keyboard-accessible image previews, and an email-draft form.
 
-### ✨ Key Features
+GainTrack's current preview is an illustrative recreation, labelled on the page. HallSync images are actual application screenshots. The contact form opens the visitor's email app; it does not send or store messages on a server.
 
-- **Interactive 3D Neural Tensor Canvas**: Real-time 3D prospective loss manifold and mathematical wave grid built with HTML5 Canvas and Vanilla JavaScript that responds dynamically to mouse movement.
-- **Obsidian Dark & High-Contrast Light Mode**: Fully themed with persistent state via `localStorage` and crisp high-contrast UI borders.
-- **Interactive 3D Physics Cards**: Vanilla JS tilt & spotlight physics on credential cards.
-- **Live Interactive Modal**: Lightbox preview for industry certification badges and certificates.
-- **Clean Responsive Architecture**: Built with modern CSS Grid, Flexbox, and CSS custom properties without bulky external frameworks.
+## Run locally
 
----
+No build step or package installation is required. From the repository folder, run:
 
-## 🛠️ Built With
+```bash
+python -m http.server 8000
+```
 
-- **HTML5** — Semantic, accessible document structure.
-- **CSS3** — Custom design system, CSS variables, glassmorphism, responsive media queries.
-- **JavaScript (ES6+)** — Canvas rendering engine, typewriter animation, theme persistence, and modal handlers.
-- **Google Fonts** — Plus Jakarta Sans, Space Grotesk & JetBrains Mono.
+Then open `http://localhost:8000` in your browser.
 
----
-
-## 📁 Project Structure
+## Project structure
 
 ```text
-mohamed-rizny-portfolio/
-│
-├── index.html              # Main HTML document
-├── LICENSE                 # MIT License
-├── README.md               # Repository documentation
-│
-└── assets/
-    ├── css/
-    │   └── style.css       # Core stylesheets & theme definitions
-    ├── js/
-    │   └── script.js       # 3D canvas manifold, animations & UI logic
-    └── images/
-        ├── my-avatar.png   # Profile portrait
-        ├── microsoft-ai.jpeg
-        ├── ai-skills-fest.png
-        ├── python.jpeg
-        └── logo.ico        # Favicon
+index.html                 Page content and metadata
+assets/css/style.css       Responsive styles and theme colours
+assets/js/script.js        Navigation, theme, image dialog, and email draft
+assets/images/             Portrait, project previews, and credentials
+assets/fonts/              Self-hosted IBM Plex Sans and its OFL licence
+.github/workflows/         Existing mobile Lighthouse audit
+CNAME                      Custom domain configuration
+```
+
+## Updating the website
+
+Edit the relevant files, check desktop and narrow mobile layouts, and commit and push to `main`. GitHub Pages publishes the repository using the existing custom domain configuration. Keep `CNAME` unchanged unless you intend to change the domain.
+
+The website uses semantic HTML, CSS, and vanilla JavaScript. IBM Plex Sans is self-hosted under the [SIL Open Font License](assets/fonts/OFL.txt); there are no runtime framework or font-service dependencies.
