@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 1. Theme Management
   function initTheme() {
     const themeBtn = document.getElementById("theme-toggle");
-    const savedTheme = localStorage.getItem("theme") || "dark";
+    const savedTheme = localStorage.getItem("theme") || "light";
 
     document.documentElement.setAttribute("data-theme", savedTheme);
 
