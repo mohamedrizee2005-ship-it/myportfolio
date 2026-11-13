@@ -7,7 +7,7 @@ My personal portfolio as a Management & Information Technology undergraduate at 
 ## What is included
 
 - An introduction, education details, and contact links.
-- GainTrack Strength, a personal Android workout project.
+- GainTrack Strength, an Android workout project developed with AI assistance.
 - HallSync, a completed university group project using Java and MySQL.
 - Skills, certifications, and a learning badge with issuer links.
 - Responsive layouts, light and dark themes, keyboard-accessible image previews, and an email-draft form.
