@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#0d1523">
+  <meta name="theme-color" content="#f6f8fa">
   <meta name="description" content="Portfolio of Mohamed Rizny, a University of Kelaniya Management & IT undergraduate learning AI and software development. Explore projects, technical skills, and certifications.">
   <meta name="author" content="Mohamed Rizny">
   <link rel="canonical" href="https://riznysm.me/">
@@ -117,23 +117,22 @@
         <!-- Academic Tag -->
         <div class="tag-wrapper">
           <span class="meta-tag">
-            
-            Management &amp; IT Undergraduate &bull; University of Kelaniya
+            University of Kelaniya &bull; Sri Lanka
           </span>
         </div>
 
         <!-- Headline -->
         <h1 class="hero-heading"><span class="hero-eyebrow">Hi, I'm</span><span class="highlight-gradient">Mohamed Rizny.</span></h1>
 
-        <p class="hero-subtitle">I learn by building useful software.</p>
+        <p class="hero-subtitle">Management &amp; IT Undergraduate <span aria-hidden="true">·</span> Aspiring AI Engineer</p>
 
         <!-- Description -->
         <p class="hero-bio">
-          I'm a Management &amp; IT undergraduate at the University of Kelaniya, interested in AI and software development. I use projects like GainTrack and HallSync to put what I learn into practice.
+          I study at the University of Kelaniya and learn by building software. My recent projects include GainTrack, an offline Android workout app, and HallSync, a lecture hall booking system built with my university group.
         </p>
 
         <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary">View my projects <span aria-hidden="true">↗</span></a>
+          <a href="#projects" class="btn btn-primary">View Projects <span aria-hidden="true">↗</span></a>
           <a href="mailto:mohamedrizee2005@gmail.com" class="btn btn-secondary">Email me</a>
         </div>
 
@@ -165,8 +164,8 @@
       <div class="container">
 
         <div class="section-heading reveal">
-          <span class="section-subtitle">Experience</span>
-          <h2 class="section-title">Featured Projects</h2>
+          <span class="section-subtitle">Selected work</span>
+          <h2 class="section-title">Projects</h2>
         </div>
 
         <div class="timeline-container">
@@ -174,7 +173,12 @@
             <div class="timeline-marker"><div class="marker-dot"></div></div>
             <div class="card timeline-content">
               <div class="timeline-header"><div><span class="timeline-tag">Android App · v4.0 Workout-Only MVP</span><h3 class="timeline-name">GainTrack Strength — No-Equipment Workout Coach</h3></div><span class="timeline-date">2026</span></div>
-              <p class="timeline-text">A focused Android strength-training app I built for people who want to work out consistently at home, without gym equipment. GainTrack v4 provides a personalized four-day plan, push-up difficulty levels, easy set-by-set workout logging, an automatic rest timer, recovery-day guidance, and weekly progress tracking. It also lets users update their current weight and next milestone. The app works offline, and its workout experience is intentionally simple.</p>
+              <p class="timeline-text">I built GainTrack Strength to make home workouts simpler. The offline Android app combines a four-day plan, push-up levels, set logging, a rest timer and a weekly progress view.</p>
+              <div class="project-proof" aria-label="GainTrack quick project details">
+                <p><strong>Problem</strong><span>Following home workouts consistently without equipment</span></p>
+                <p><strong>What I built</strong><span>Workout guidance, set tracking, and offline progress history</span></p>
+                <p><strong>What I learned</strong><span>A focused workout flow works better than too many unrelated features</span></p>
+              </div>
               <div class="gaintrack-gallery" role="group" aria-label="GainTrack v4 workout-only interface preview">
                 <figure class="gaintrack-shot">
                   <a href="./assets/images/gaintrack-v4-strength-hd.webp" target="_blank" rel="noopener noreferrer" aria-label="Open high-resolution GainTrack v4 workout dashboard image">
@@ -208,7 +212,12 @@
             <div class="timeline-marker"><div class="marker-dot"></div></div>
             <div class="card timeline-content">
               <div class="timeline-header"><div><span class="timeline-tag">University Group Project · Completed</span><h3 class="timeline-name">HallSync — Lecture Hall Booking &amp; Campus Space Management</h3></div><span class="timeline-date">2026</span></div>
-              <p class="timeline-text">A completed university group project for managing lecture halls through a responsive browser interface and a Java/MySQL backend. Students can explore halls and schedules; lecturers can request available rooms; administrators review bookings, manage campus spaces and generate reports. Transactional checks help prevent conflicting approved reservations.</p>
+              <p class="timeline-text">HallSync is our university group's lecture hall booking project. It uses a responsive browser interface with Java and MySQL to support hall searches, requests, approvals and reporting.</p>
+              <div class="project-proof" aria-label="HallSync quick project details">
+                <p><strong>Problem</strong><span>Manual hall booking and clashes between approved reservations</span></p>
+                <p><strong>Team solution</strong><span>Role-based booking workflow, validation and administrator reports</span></p>
+                <p><strong>My learning focus</strong><span>Connecting ER modelling, Java services, JDBC and database rules</span></p>
+              </div>
               <div class="hallsync-gallery" role="group" aria-label="HallSync application screenshots">
                 <figure class="hallsync-shot">
                   <a href="https://raw.githubusercontent.com/mohamedrizee2005-ship-it/HallSync-Lecture-Hall-Booking-System/main/.github/assets/hallsync-dark.webp" target="_blank" rel="noopener noreferrer" aria-label="Open full HallSync sign-in screenshot">
@@ -236,6 +245,7 @@
                   <p><strong>Our solution:</strong> Role-based access for students, lecturers and administrators; searchable halls and schedules; booking requests and approvals; maintenance closures; and CSV or calendar exports.</p>
                   <p><strong>How it works:</strong> Java services and JDBC connect a responsive HTML/CSS/JavaScript interface to MySQL. Database validation and coordinated transactions prevent overlapping approved bookings.</p>
                   <p><strong>What we tested:</strong> GitHub Actions checks database rules, application behavior, browser interactions and the Windows launcher. The README explains installation, configuration and upgrades.</p>
+                  <p><strong>What I studied:</strong> How the ER diagram, MySQL tables, JDBC connection and booking-conflict validation fit together, so I can explain how this group project works. Feature ownership is not assigned to one person here.</p>
                   <p class="case-study-note">HallSync is a completed university software project designed for local demonstration, not a live university-wide booking service.</p>
                 </div>
               </details>
@@ -580,7 +590,7 @@
 
               <button class="btn btn-primary form-button" type="submit">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
-                <span>Open email draft</span>
+                <span>Open Email App</span>
               </button>
               <p class="form-note" id="contact-form-status" role="status" aria-live="polite">Nothing is sent from this website.</p>
             </form>
