@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#030712">
+  <meta name="theme-color" content="#0d1523">
   <meta name="description" content="Portfolio of Mohamed Rizny, a University of Kelaniya Management & IT undergraduate learning AI and software development. Explore projects, technical skills, and certifications.">
   <meta name="author" content="Mohamed Rizny">
   <link rel="canonical" href="https://riznysm.me/">
@@ -50,38 +50,31 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <!-- Interactive 3D Background Canvas -->
-  <canvas id="bg-canvas" class="bg-canvas" aria-hidden="true"></canvas>
-
-  <!-- Ambient Glow & Grid -->
-  <div class="bg-grid" aria-hidden="true"></div>
-  <div class="ambient-glow glow-cyan" id="glow-1" aria-hidden="true"></div>
-  <div class="ambient-glow glow-violet" id="glow-2" aria-hidden="true"></div>
-  <div class="cursor-glow" data-cursor-glow aria-hidden="true"></div>
+  <!-- A static background keeps the focus on the work. -->
 
   <!-- Header Navigation -->
   <header class="header" data-header>
     <div class="header-container">
 
       <a href="#home" class="logo">
-        <span class="logo-badge">&lt;MR /&gt;</span>
+        <span class="logo-badge">MR.</span>
         <div class="logo-text">
           <span class="logo-title">Mohamed Rizny</span>
-          <span class="logo-subtitle">Aspiring AI Engineer</span>
+          <span class="logo-subtitle">Management &amp; IT Student</span>
         </div>
       </a>
 
       <nav class="nav-menu" data-nav-menu aria-label="Main navigation">
+        <a href="#projects" class="nav-link" data-nav-link>Projects</a>
         <a href="#about" class="nav-link" data-nav-link>About</a>
         <a href="#skills" class="nav-link" data-nav-link>Skills</a>
-        <a href="#projects" class="nav-link" data-nav-link>Projects</a>
         <a href="#certificates" class="nav-link" data-nav-link>Certifications</a>
         <a href="#contact" class="nav-link" data-nav-link>Contact</a>
       </nav>
@@ -112,24 +105,11 @@
     <section id="home" class="hero-section">
       <div class="hero-container">
 
-        <!-- Profile Avatar -->
+        <!-- Profile photo: original image, without visual effects or substitutes. -->
         <div class="avatar-container">
-          <div class="avatar-halo"></div>
-          <div class="avatar-orbit"></div>
           <div class="avatar-frame">
             <div class="avatar-ring">
-              <img
-                src="./assets/images/my-avatar.png"
-                alt="Portrait of Mohamed Rizny"
-                class="avatar-image"
-                fetchpriority="high"
-                decoding="async"
-                onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80';">
-              <div class="avatar-scanner"></div>
-            </div>
-            <div class="status-badge">
-              <span class="status-dot"></span>
-              <span class="status-label">Aspiring AI Engineer</span>
+              <img src="./assets/images/my-avatar.png" alt="Portrait of Mohamed Rizny" class="avatar-image" width="315" height="315" fetchpriority="high" decoding="async">
             </div>
           </div>
         </div>
@@ -137,42 +117,24 @@
         <!-- Academic Tag -->
         <div class="tag-wrapper">
           <span class="meta-tag">
-            <svg class="spark-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
+            
             Management &amp; IT Undergraduate &bull; University of Kelaniya
           </span>
         </div>
 
         <!-- Headline -->
-        <h1 class="hero-heading">
-          Learning and Building Towards <br class="desktop-only">
-          <span class="highlight-gradient">AI Engineering</span>
-        </h1>
+        <h1 class="hero-heading"><span class="hero-eyebrow">Hi, I'm</span><span class="highlight-gradient">Mohamed Rizny.</span></h1>
 
-        <!-- Typewriter Subtitle -->
-        <p class="hero-subtitle">
-          <span class="typewriter" data-typewriter='["Learning AI and software development", "Building practical projects", "Exploring app and web development", "Improving my programming skills"]'></span>
-          <span class="cursor">|</span>
-        </p>
+        <p class="hero-subtitle">I learn by building useful software.</p>
 
         <!-- Description -->
         <p class="hero-bio">
-          I'm Mohamed Rizny, a Management &amp; IT undergraduate at the University of Kelaniya. I'm learning AI and software development by building practical projects and strengthening my programming skills.
+          I'm a Management &amp; IT undergraduate at the University of Kelaniya, interested in AI and software development. I use projects like GainTrack and HallSync to put what I learn into practice.
         </p>
 
-        <!-- CTA Buttons -->
         <div class="hero-buttons">
-          <a href="#certificates" class="btn btn-primary">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
-            <span>View Certifications</span>
-          </a>
-          <a href="#projects" class="btn btn-secondary">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-            <span>Explore Projects</span>
-          </a>
-          <a href="mailto:mohamedrizee2005@gmail.com" class="btn btn-secondary">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
-            <span>Email Me</span>
-          </a>
+          <a href="#projects" class="btn btn-primary">View my projects <span aria-hidden="true">↗</span></a>
+          <a href="mailto:mohamedrizee2005@gmail.com" class="btn btn-secondary">Email me</a>
         </div>
 
         <!-- Quick Links / Badges -->
@@ -193,129 +155,6 @@
             <span class="pulse-indicator"></span>
             <span>Open to Opportunities</span>
           </span>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section">
-      <div class="container">
-
-        <div class="section-heading reveal">
-          <span class="section-subtitle">Background</span>
-          <h2 class="section-title">About Me</h2>
-        </div>
-
-        <div class="about-layout">
-
-          <div class="glass-card about-intro reveal">
-            <div class="chip">Overview</div>
-            <p>
-              I am pursuing a <strong>B.Sc. (Hons.) in Management &amp; Information Technology (MIT)</strong> at the <strong>Faculty of Science, University of Kelaniya</strong>. My expected graduation year is <strong>2029</strong>.
-            </p>
-            <p>
-              I am interested in how artificial intelligence and software can help solve real-world problems. I am building my knowledge in <strong>AI fundamentals</strong>, <strong>programming</strong>, and <strong>software development</strong> through university studies and personal learning.
-            </p>
-            <p>
-              My goal is to keep improving my technical skills and turn what I learn into useful, practical applications. I am also a member of the Rotaract Club of the University of Kelaniya, where I look forward to contributing to university and community activities.
-            </p>
-
-            <div class="stats-grid">
-              <div class="stat-item">
-                <span class="stat-value">AI &amp; IT</span>
-                <span class="stat-desc">Learning Focus</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-value">3</span>
-                <span class="stat-desc">Credentials</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-value">2029</span>
-                <span class="stat-desc">Expected Graduation</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="about-domains">
-
-            <div class="card domain-item reveal">
-              <div class="icon-box">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10H12V2z"/><path d="M12 12L2.5 7.5"/><path d="m12 12 4.5 7.5"/></svg>
-              </div>
-              <div>
-                <h3>Artificial Intelligence &amp; ML</h3>
-                <p>Learning AI fundamentals and exploring practical uses of AI, supported by Microsoft Azure AI Fundamentals.</p>
-              </div>
-            </div>
-
-            <div class="card domain-item reveal">
-              <div class="icon-box">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-              </div>
-              <div>
-                <h3>Software Development</h3>
-                <p>Practising programming and object-oriented concepts with Python, Java, and C++ through coursework and projects.</p>
-              </div>
-            </div>
-
-            <div class="card domain-item reveal">
-              <div class="icon-box">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/></svg>
-              </div>
-              <div>
-                <h3>Modern Web Interfaces</h3>
-                <p>Building and maintaining web pages using HTML, CSS, and JavaScript.</p>
-              </div>
-            </div>
-
-            <div class="card domain-item reveal">
-              <div class="icon-box">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
-              </div>
-              <div>
-                <h3>Databases &amp; Networking</h3>
-                <p>Learning SQL, MySQL, database design, and networking fundamentals through university coursework.</p>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-      <div class="container">
-
-        <div class="section-heading reveal">
-          <span class="section-subtitle">Competencies</span>
-          <h2 class="section-title">Technical Skills</h2>
-        </div>
-
-        <div class="skills-grid">
-          <div class="card skill-card skill-card-featured reveal">
-            <div class="skill-header"><div class="skill-emoji">🤖</div><div><h3>AI &amp; Emerging Technologies</h3><span class="skill-category">Learning Focus</span></div></div>
-            <div class="pill-group"><span class="pill pill-accent">Azure AI Fundamentals</span><span class="pill">AI Engineering (Learning)</span></div>
-            <div class="skill-footer"><span class="indicator-dot"></span><span>Building foundational AI knowledge</span></div>
-          </div>
-          <div class="card skill-card reveal">
-            <div class="skill-header"><div class="skill-emoji">💻</div><div><h3>Software &amp; Web</h3><span class="skill-category">Programming</span></div></div>
-            <div class="pill-group"><span class="pill">Python</span><span class="pill">Java</span><span class="pill">C++</span><span class="pill">Kotlin</span><span class="pill">Object-Oriented Programming</span><span class="pill">HTML5</span><span class="pill">CSS3</span><span class="pill">JavaScript</span></div>
-            <div class="skill-footer"><span class="indicator-dot"></span><span>Programming and application development</span></div>
-          </div>
-          <div class="card skill-card reveal">
-            <div class="skill-header"><div class="skill-emoji">🗄️</div><div><h3>Databases &amp; Tools</h3><span class="skill-category">Development Tools</span></div></div>
-            <div class="pill-group"><span class="pill">SQL</span><span class="pill">MySQL</span><span class="pill">Room Database</span><span class="pill">Git</span><span class="pill">GitHub</span><span class="pill">VS Code</span><span class="pill">NetBeans</span></div>
-            <div class="skill-footer"><span class="indicator-dot"></span><span>Database fundamentals and version control</span></div>
-          </div>
-          <div class="card skill-card reveal">
-            <div class="skill-header"><div class="skill-emoji">📱</div><div><h3>Android Development</h3><span class="skill-category">Currently Learning</span></div></div>
-            <div class="pill-group"><span class="pill">Android</span><span class="pill">Jetpack Compose</span><span class="pill">Kotlin Coroutines</span></div>
-            <div class="skill-footer"><span class="indicator-dot"></span><span>Developing an Android application</span></div>
-          </div>
         </div>
 
       </div>
@@ -407,6 +246,129 @@
       </div>
     </section>
 
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="section-subtitle">Background</span>
+          <h2 class="section-title">About Me</h2>
+        </div>
+
+        <div class="about-layout">
+
+          <div class="glass-card about-intro reveal">
+            <div class="chip">Overview</div>
+            <p>
+              I am pursuing a <strong>B.Sc. (Hons.) in Management &amp; Information Technology (MIT)</strong> at the <strong>Faculty of Science, University of Kelaniya</strong>. My expected graduation year is <strong>2029</strong>.
+            </p>
+            <p>
+              I enjoy understanding how software works, from writing code to connecting an interface with a database. Lately, I've been learning more about <strong>AI</strong>, <strong>Java</strong>, <strong>Python</strong> and building practical applications.
+            </p>
+            <p>
+              I want to become a better developer by building, testing and improving real projects. Outside coursework, I'm part of the Rotaract Club at the University of Kelaniya.
+            </p>
+
+            <div class="stats-grid">
+              <div class="stat-item">
+                <span class="stat-value">AI &amp; IT</span>
+                <span class="stat-desc">Learning Focus</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value">3</span>
+                <span class="stat-desc">Credentials</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value">2029</span>
+                <span class="stat-desc">Expected Graduation</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-domains">
+
+            <div class="card domain-item reveal">
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10H12V2z"/><path d="M12 12L2.5 7.5"/><path d="m12 12 4.5 7.5"/></svg>
+              </div>
+              <div>
+                <h3>Artificial Intelligence &amp; ML</h3>
+                <p>Learning AI fundamentals and exploring practical uses of AI, supported by Microsoft Azure AI Fundamentals.</p>
+              </div>
+            </div>
+
+            <div class="card domain-item reveal">
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </div>
+              <div>
+                <h3>Software Development</h3>
+                <p>Practising programming and object-oriented concepts with Python, Java, and C++ through coursework and projects.</p>
+              </div>
+            </div>
+
+            <div class="card domain-item reveal">
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/></svg>
+              </div>
+              <div>
+                <h3>Modern Web Interfaces</h3>
+                <p>Building and maintaining web pages using HTML, CSS, and JavaScript.</p>
+              </div>
+            </div>
+
+            <div class="card domain-item reveal">
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+              </div>
+              <div>
+                <h3>Databases &amp; Networking</h3>
+                <p>Learning SQL, MySQL, database design, and networking fundamentals through university coursework.</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="section-subtitle">Competencies</span>
+          <h2 class="section-title">Technical Skills</h2>
+        </div>
+
+        <div class="skills-grid">
+          <div class="card skill-card skill-card-featured reveal">
+            <div class="skill-header"><div class="skill-emoji">AI</div><div><h3>AI &amp; Emerging Technologies</h3><span class="skill-category">Learning Focus</span></div></div>
+            <div class="pill-group"><span class="pill pill-accent">Azure AI Fundamentals</span><span class="pill">AI Engineering (Learning)</span></div>
+            <div class="skill-footer"><span class="indicator-dot"></span><span>Building foundational AI knowledge</span></div>
+          </div>
+          <div class="card skill-card reveal">
+            <div class="skill-header"><div class="skill-emoji">DEV</div><div><h3>Software &amp; Web</h3><span class="skill-category">Programming</span></div></div>
+            <div class="pill-group"><span class="pill">Python</span><span class="pill">Java</span><span class="pill">C++</span><span class="pill">Kotlin</span><span class="pill">Object-Oriented Programming</span><span class="pill">HTML5</span><span class="pill">CSS3</span><span class="pill">JavaScript</span></div>
+            <div class="skill-footer"><span class="indicator-dot"></span><span>Programming and application development</span></div>
+          </div>
+          <div class="card skill-card reveal">
+            <div class="skill-header"><div class="skill-emoji">DB</div><div><h3>Databases &amp; Tools</h3><span class="skill-category">Development Tools</span></div></div>
+            <div class="pill-group"><span class="pill">SQL</span><span class="pill">MySQL</span><span class="pill">Room Database</span><span class="pill">Git</span><span class="pill">GitHub</span><span class="pill">VS Code</span><span class="pill">NetBeans</span></div>
+            <div class="skill-footer"><span class="indicator-dot"></span><span>Database fundamentals and version control</span></div>
+          </div>
+          <div class="card skill-card reveal">
+            <div class="skill-header"><div class="skill-emoji">APP</div><div><h3>Android Development</h3><span class="skill-category">Currently Learning</span></div></div>
+            <div class="pill-group"><span class="pill">Android</span><span class="pill">Jetpack Compose</span><span class="pill">Kotlin Coroutines</span></div>
+            <div class="skill-footer"><span class="indicator-dot"></span><span>Developing an Android application</span></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
     <!-- Certifications Section -->
     <section id="certificates" class="section">
       <div class="container">
@@ -429,8 +391,7 @@
                 <img
                   src="./assets/images/microsoft-ai.jpeg"
                   alt="Microsoft Certified: Azure AI Fundamentals"
-                  loading="lazy"
-                  onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80';">
+                  loading="lazy">
                 <span class="zoom-button" aria-label="Enlarge certificate image">
                   <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
                 </span>
@@ -460,8 +421,7 @@
                 <img
                   src="./assets/images/ai-skills-fest.png"
                   alt="Microsoft AI Skills Fest 2026"
-                  loading="lazy"
-                  onerror="this.src='https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=600&q=80';">
+                  loading="lazy">
                 <span class="zoom-button" aria-label="Enlarge certificate image">
                   <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
                 </span>
@@ -492,8 +452,7 @@
                 <img
                   src="./assets/images/python.jpeg"
                   alt="freeCodeCamp Python Developer Certification"
-                  loading="lazy"
-                  onerror="this.src='https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80';">
+                  loading="lazy">
                 <span class="zoom-button" aria-label="Enlarge certificate image">
                   <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
                 </span>
@@ -532,7 +491,7 @@
             <div class="glass-card contact-message-card">
               <h3>Let's Connect</h3>
               <p>
-                I'm open to discussing AI engineering projects, software development internships, or potential collaborations.
+                Have a project idea, internship opportunity or question about my work? I'd be glad to hear from you.
               </p>
             </div>
 
@@ -593,8 +552,8 @@
 
           <div class="glass-card contact-form-card reveal">
             <div class="form-title-box">
-              <h3>Send a Message</h3>
-              <p>Fill out the form below to open an email with your message ready to send.</p>
+              <h3>Write an email</h3>
+              <p>This prepares a draft in your email app. You'll review and send it there.</p>
             </div>
 
             <form class="contact-form" id="contact-form">
@@ -611,7 +570,7 @@
 
               <div class="input-group">
                 <label for="subject" class="input-label">Subject</label>
-                <input type="text" name="subject" id="subject" class="form-control" placeholder="Project Inquiry / Opportunity">
+                <input type="text" name="subject" id="subject" class="form-control" placeholder="About a project or opportunity">
               </div>
 
               <div class="input-group">
@@ -621,8 +580,9 @@
 
               <button class="btn btn-primary form-button" type="submit">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
-                <span>Send Message</span>
+                <span>Open email draft</span>
               </button>
+              <p class="form-note" id="contact-form-status" role="status" aria-live="polite">Nothing is sent from this website.</p>
             </form>
           </div>
 
